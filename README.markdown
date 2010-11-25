@@ -22,7 +22,10 @@ This is a sinmple exporter plugin for <a href="http://www.apple.com/aperture/">A
 * Add a tag to all uploaded photos
 
 ## Usage and Installation
-After downloading, this plugin should be put in the directory `~/Library/Application Support/Aperture/Plug-Ins/Export`. If the `Plug-Ins` and / or `Export` directories do not exist, create them.  If Aperture is running, restart it.  Then select the versions to export, choose `File -> Export -> FacebookExporter...`
+1. Download the <a href="https://github.com/downloads/streeter/facebook-aperture-exporter/FacebookExporter.ApertureExport.zip">plugin from github</a>.
+2. After downloading, put the plugin in the directory `~/Library/Application Support/Aperture/Plug-Ins/Export`. If the `Plug-Ins` and / or `Export` directories do not exist, create them.
+3. If Aperture is running, restart it.
+4. Select the versions to export, choose `File -> Export -> FacebookExporter...`
 
 ## Screenshot
 
