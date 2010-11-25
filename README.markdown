@@ -23,8 +23,6 @@ After downloading, this plugin should be put in the directory `~/Library/Applica
 <a href="https://github.com/streeter/facebook-aperture-exporter/raw/master/screenshot.png"><img width="600" style="width: 600px" src="https://github.com/streeter/facebook-aperture-exporter/raw/master/screenshot.png" /></a>
 
 ## Authors
-* Chris Streeter
-
-Facebook Library from Facebook
-
-Inspiration from the Aperture to Picasa Plugin
+* <a href="http://www.chrisstreeter.com">Chris Streeter</a>
+* Some code is taken from <a href="https://github.com/facebook/facebook-ios-sdk">Facebook's iOS Library</a> (why don't they have a desktop SDK!)
+* Inspiration from the <a href="http://code.google.com/p/aperture-picasa-plugin/">Aperture to Picasa Plugin</a>
