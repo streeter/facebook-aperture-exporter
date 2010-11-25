@@ -20,6 +20,7 @@ This is a sinmple exporter plugin for <a href="http://www.apple.com/aperture/">A
 * Growl notifications
 * Choose whether to use the Title or Description from each photo to use as the photo's caption on Facebook (currently uses the title).
 * Add a tag to all uploaded photos
+* Sparkle automatic updates
 
 ## Usage and Installation
 1. Download the <a href="https://github.com/downloads/streeter/facebook-aperture-exporter/FacebookExporter.ApertureExport.zip">plugin from github</a>.
