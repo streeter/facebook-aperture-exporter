@@ -1,19 +1,24 @@
 # Facebook Aperture Exporter
 
 ## About
-This is a sinmple exporter plugin for Apple's Aperture. I wasn't happy with the built-in syncing Aperture 3 has, and the existing export plugin for Facebook wouldn't work for me. Plus, that author wasn't returning my emails to try and get it to work. So I wrote me own.
+This is a sinmple exporter plugin for <a href="http://www.apple.com/aperture/">Apple's Aperture</a>. I wasn't happy with the built-in syncing Aperture 3 has, and the existing export plugin for Facebook wouldn't work for me. Plus, that author wasn't returning my emails to try and get it to work. So I wrote me own.
 
 ## Current Features
-* logging in and out of a Facebook account
-* album creation and selection (where to upload the photos to)
-* high resolution uploads to Facebook
+* Logging in and out of a Facebook account
+* Album creation and selection (where to upload the photos to)
+* High resolution photo uploads to Facebook
+  * This is enabled by uploading large versions to Facebook (choose an export preset that will create 2048 pixels along the largest side)
 
 ## Known Limitations and Issues
 * The preferences button does nothing. Eventually it will show the preferences window.
 * The export progress information in the Activity panel is pretty much broken. At least you know it is still exporting.
 * The caption for a created Facebook album is not set. Still figuring out why that is the case.
+* The open album when upload is complete checkbox does not work
 * When starting the plugin, a sheet displays for a moment while we check that we have the Facebook access token. This shouldn't be displayed until we need the user to login.
 
+## Nice Features to Have
+* Growl notifications
+* 
 
 ## Usage and Installation
 After downloading, this plugin should be put in the directory `~/Library/Application Support/Aperture/Plug-Ins/Export`. If the `Plug-Ins` and / or `Export` directories do not exist, create them.  If Aperture is running, restart it.  Then select the versions to export, choose `File -> Export -> FacebookExporter...`
