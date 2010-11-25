@@ -1,13 +1,13 @@
 # Facebook Aperture Exporter
 
 ## About
-This is a sinmple exporter plugin for <a href="http://www.apple.com/aperture/">Apple's Aperture</a>. I wasn't happy with the built-in syncing Aperture 3 has, and the existing export plugin for Facebook wouldn't work for me. Plus, that author wasn't returning my emails to try and get it to work. So I wrote me own.
+This is a sinmple exporter plugin for <a href="http://www.apple.com/aperture/">Apple's Aperture</a>. I wasn't happy with the built-in syncing Aperture 3 has, and the existing export plugin for Facebook wouldn't work for me. Plus, that author wasn't returning my emails to try and get it to work. So I wrote my own.
 
 ## Current Features
 * Logging in and out of a Facebook account
 * Album creation and selection (where to upload the photos to)
 * High resolution photo uploads to Facebook
-  * This is enabled by uploading large versions to Facebook (choose an export preset that will create 2048 pixels along the largest side)
+  * Enabled by uploading large versions to Facebook (choose an export preset that will create 2048 pixels along the largest side)
 
 ## Known Limitations and Issues
 * The preferences button does nothing. Eventually it will show the preferences window.
@@ -18,7 +18,8 @@ This is a sinmple exporter plugin for <a href="http://www.apple.com/aperture/">A
 
 ## Nice Features to Have
 * Growl notifications
-* 
+* Choose whether to use the Title or Description from each photo to use as the photo's caption on Facebook (currently uses the title).
+* Add a tag to all uploaded photos
 
 ## Usage and Installation
 After downloading, this plugin should be put in the directory `~/Library/Application Support/Aperture/Plug-Ins/Export`. If the `Plug-Ins` and / or `Export` directories do not exist, create them.  If Aperture is running, restart it.  Then select the versions to export, choose `File -> Export -> FacebookExporter...`
