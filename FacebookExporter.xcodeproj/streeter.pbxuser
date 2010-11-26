@@ -1,7 +1,8 @@
 // !$*UTF8*$!
 {
 	089C1669FE841209C02AAC07 /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeArchitecturePreference = x86_64;
+		activeBuildConfigurationName = Release;
 		activeTarget = 8D5B49AC048680CD000E48DA /* FacebookExporter */;
 		addToTargets = (
 			8D5B49AC048680CD000E48DA /* FacebookExporter */,
@@ -66,27 +67,28 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 312356807;
-			PBXWorkspaceStateSaveDate = 312356807;
+			PBXPerProjectTemplateStateSaveDate = 312478836;
+			PBXWorkspaceStateSaveDate = 312478836;
 		};
 		perUserProjectItems = {
-			D952D31E128CC14200E3EFBD /* PBXTextBookmark */ = D952D31E128CC14200E3EFBD /* PBXTextBookmark */;
-			D952D31F128CC14200E3EFBD /* PBXTextBookmark */ = D952D31F128CC14200E3EFBD /* PBXTextBookmark */;
-			D957EDC0129336B000418F32 /* PBXTextBookmark */ = D957EDC0129336B000418F32 /* PBXTextBookmark */;
-			D957EDC1129336B000418F32 /* PBXTextBookmark */ = D957EDC1129336B000418F32 /* PBXTextBookmark */;
-			D97B137E129E2ABD00FC44EC /* PBXTextBookmark */ = D97B137E129E2ABD00FC44EC /* PBXTextBookmark */;
-			D97B1390129E2C2E00FC44EC /* PBXTextBookmark */ = D97B1390129E2C2E00FC44EC /* PBXTextBookmark */;
-			D99F10A4128744B300A48041 /* PBXTextBookmark */ = D99F10A4128744B300A48041 /* PBXTextBookmark */;
-			D99F10A5128744B300A48041 /* PBXTextBookmark */ = D99F10A5128744B300A48041 /* PBXTextBookmark */;
-			D99F10B11287460100A48041 /* PlistBookmark */ = D99F10B11287460100A48041 /* PlistBookmark */;
-			D99F13E31288060B00A48041 /* PBXTextBookmark */ = D99F13E31288060B00A48041 /* PBXTextBookmark */;
-			D99F13E41288060B00A48041 /* PBXTextBookmark */ = D99F13E41288060B00A48041 /* PBXTextBookmark */;
-			D9D2052E129E30340014BB37 /* PBXTextBookmark */ = D9D2052E129E30340014BB37 /* PBXTextBookmark */;
-			D9D2052F129E30340014BB37 /* PBXTextBookmark */ = D9D2052F129E30340014BB37 /* PBXTextBookmark */;
-			D9D20533129E30990014BB37 /* PBXTextBookmark */ = D9D20533129E30990014BB37 /* PBXTextBookmark */;
-			D9E24E36129E26CB0003A5CF /* PBXTextBookmark */ = D9E24E36129E26CB0003A5CF /* PBXTextBookmark */;
-			D9FBCE9E128B0F4E00EDEADA /* PBXTextBookmark */ = D9FBCE9E128B0F4E00EDEADA /* PBXTextBookmark */;
-			D9FF61FB128B90540012A792 /* PBXTextBookmark */ = D9FF61FB128B90540012A792 /* PBXTextBookmark */;
+			D974D64412A00E59003CCF23 /* PBXTextBookmark */ = D974D64412A00E59003CCF23 /* PBXTextBookmark */;
+			D9773010129EBB33000E254F = D9773010129EBB33000E254F /* PBXTextBookmark */;
+			D9773011129EBB33000E254F = D9773011129EBB33000E254F /* PBXTextBookmark */;
+			D9773012129EBB33000E254F = D9773012129EBB33000E254F /* PBXTextBookmark */;
+			D9773013129EBB33000E254F = D9773013129EBB33000E254F /* PlistBookmark */;
+			D9773014129EBB33000E254F = D9773014129EBB33000E254F /* PBXTextBookmark */;
+			D9773015129EBB33000E254F = D9773015129EBB33000E254F /* PBXTextBookmark */;
+			D9773016129EBB33000E254F = D9773016129EBB33000E254F /* PBXTextBookmark */;
+			D9773017129EBB33000E254F = D9773017129EBB33000E254F /* PBXTextBookmark */;
+			D9773018129EBB33000E254F = D9773018129EBB33000E254F /* PBXTextBookmark */;
+			D9773019129EBB33000E254F = D9773019129EBB33000E254F /* PBXTextBookmark */;
+			D977301B129EBB33000E254F = D977301B129EBB33000E254F /* PBXTextBookmark */;
+			D99F10A4128744B300A48041 = D99F10A4128744B300A48041 /* PBXTextBookmark */;
+			D99F10A5128744B300A48041 = D99F10A5128744B300A48041 /* PBXTextBookmark */;
+			D99F13E31288060B00A48041 = D99F13E31288060B00A48041 /* PBXTextBookmark */;
+			D99F13E41288060B00A48041 = D99F13E41288060B00A48041 /* PBXTextBookmark */;
+			D9BF0C6F12A00C2500AC4E34 = D9BF0C6F12A00C2500AC4E34 /* PBXTextBookmark */;
+			D9FBCE9E128B0F4E00EDEADA = D9FBCE9E128B0F4E00EDEADA /* PBXTextBookmark */;
 		};
 		sourceControlManager = D93E16411283D26A00143F76 /* Source Control */;
 		userBuildSettings = {
@@ -118,17 +120,17 @@
 	};
 	D15DEA4D0ABF63C600CBE3A5 /* FacebookExporter.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1580, 15392}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1580, 15093}}";
 			sepNavSelRange = "{29198, 0}";
-			sepNavVisRange = "{27554, 1737}";
+			sepNavVisRange = "{1217, 1464}";
 			sepNavWindowFrame = "{{50, 17}, {779, 837}}";
 		};
 	};
 	D15DEA4E0ABF63C600CBE3A5 /* FacebookExporter.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {987, 2392}}";
-			sepNavSelRange = "{4540, 81}";
-			sepNavVisRange = "{3510, 1412}";
+			sepNavIntBoundsRect = "{{0, 0}, {913, 2418}}";
+			sepNavSelRange = "{3928, 0}";
+			sepNavVisRange = "{2981, 1520}";
 			sepNavWindowFrame = "{{863, 0}, {817, 857}}";
 		};
 	};
@@ -146,79 +148,141 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
-	D952D31E128CC14200E3EFBD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = D9FF61F8128B8F3D0012A792 /* FacebookAlbum.h */;
-		name = "FacebookAlbum.h: 21";
-		rLen = 0;
-		rLoc = 346;
-		rType = 0;
-		vrLen = 495;
-		vrLoc = 0;
-	};
-	D952D31F128CC14200E3EFBD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = D9FF61F9128B8F3D0012A792 /* FacebookAlbum.m */;
-		name = "FacebookAlbum.m: 69";
-		rLen = 0;
-		rLoc = 954;
-		rType = 0;
-		vrLen = 573;
-		vrLoc = 429;
-	};
 	D957ED001292FC6900418F32 /* FacebookRequestController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1279, 988}}";
-			sepNavSelRange = "{531, 0}";
-			sepNavVisRange = "{164, 940}";
+			sepNavIntBoundsRect = "{{0, 0}, {913, 1092}}";
+			sepNavSelRange = "{342, 0}";
+			sepNavVisRange = "{0, 870}";
 		};
 	};
 	D957ED011292FC6900418F32 /* FacebookRequestController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1069, 4810}}";
-			sepNavSelRange = "{2929, 0}";
-			sepNavVisRange = "{1887, 1266}";
+			sepNavIntBoundsRect = "{{0, 0}, {1069, 4927}}";
+			sepNavSelRange = "{2324, 0}";
+			sepNavVisRange = "{0, 1136}";
 		};
 	};
-	D957EDC0129336B000418F32 /* PBXTextBookmark */ = {
+	D974D64412A00E59003CCF23 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = D15DEA4D0ABF63C600CBE3A5 /* FacebookExporter.m */;
+		name = "FacebookExporter.m: 1022";
+		rLen = 0;
+		rLoc = 29198;
+		rType = 0;
+		vrLen = 1464;
+		vrLoc = 1217;
+	};
+	D9773010129EBB33000E254F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = D99F11231287643200A48041 /* FacebookPicture.h */;
+		name = "FacebookPicture.h: 11";
+		rLen = 0;
+		rLoc = 179;
+		rType = 0;
+		vrLen = 871;
+		vrLoc = 0;
+	};
+	D9773011129EBB33000E254F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = D99F11241287643200A48041 /* FacebookPicture.m */;
 		name = "FacebookPicture.m: 14";
 		rLen = 0;
 		rLoc = 227;
 		rType = 0;
-		vrLen = 695;
-		vrLoc = 49;
+		vrLen = 663;
+		vrLoc = 0;
 	};
-	D957EDC1129336B000418F32 /* PBXTextBookmark */ = {
+	D9773012129EBB33000E254F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = D15DEA4E0ABF63C600CBE3A5 /* FacebookExporter.h */;
-		name = "FacebookExporter.h: 148";
-		rLen = 81;
-		rLoc = 4540;
-		rType = 0;
-		vrLen = 1412;
-		vrLoc = 3510;
-	};
-	D97B137E129E2ABD00FC44EC /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = D957ED001292FC6900418F32 /* FacebookRequestController.h */;
-		name = "FacebookRequestController.h: 28";
+		fRef = D9FF61F9128B8F3D0012A792 /* FacebookAlbum.m */;
+		name = "FacebookAlbum.m: 41";
 		rLen = 0;
-		rLoc = 531;
+		rLoc = 560;
 		rType = 0;
-		vrLen = 940;
-		vrLoc = 164;
+		vrLen = 604;
+		vrLoc = 0;
 	};
-	D97B1390129E2C2E00FC44EC /* PBXTextBookmark */ = {
+	D9773013129EBB33000E254F /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D5B49B7048680CD000E48DA /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleVersion,
+		);
+		name = /Users/streeter/Desktop/FacebookExporter/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	D9773014129EBB33000E254F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = D99F136D1287FE5400A48041 /* FacebookRequest.m */;
-		name = "FacebookRequest.m: 229";
-		rLen = 5;
-		rLoc = 7272;
+		name = "FacebookRequest.m: 217";
+		rLen = 0;
+		rLoc = 7103;
 		rType = 0;
-		vrLen = 1294;
-		vrLoc = 6803;
+		vrLen = 1469;
+		vrLoc = 592;
+	};
+	D9773015129EBB33000E254F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = D957ED011292FC6900418F32 /* FacebookRequestController.m */;
+		name = "FacebookRequestController.m: 92";
+		rLen = 0;
+		rLoc = 2324;
+		rType = 0;
+		vrLen = 1136;
+		vrLoc = 0;
+	};
+	D9773016129EBB33000E254F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = D957ED001292FC6900418F32 /* FacebookRequestController.h */;
+		name = "FacebookRequestController.h: 18";
+		rLen = 0;
+		rLoc = 342;
+		rType = 0;
+		vrLen = 870;
+		vrLoc = 0;
+	};
+	D9773017129EBB33000E254F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = D9FF61F8128B8F3D0012A792 /* FacebookAlbum.h */;
+		name = "FacebookAlbum.h: 16";
+		rLen = 0;
+		rLoc = 279;
+		rType = 0;
+		vrLen = 495;
+		vrLoc = 0;
+	};
+	D9773018129EBB33000E254F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = D99F136C1287FE5400A48041 /* FacebookRequest.h */;
+		name = "FacebookRequest.h: 67";
+		rLen = 0;
+		rLoc = 1906;
+		rType = 0;
+		vrLen = 1243;
+		vrLoc = 0;
+	};
+	D9773019129EBB33000E254F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = D15DEA4E0ABF63C600CBE3A5 /* FacebookExporter.h */;
+		name = "FacebookExporter.h: 128";
+		rLen = 0;
+		rLoc = 3928;
+		rType = 0;
+		vrLen = 1520;
+		vrLoc = 2981;
+	};
+	D977301B129EBB33000E254F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = D15DEA4D0ABF63C600CBE3A5 /* FacebookExporter.m */;
+		name = "FacebookExporter.m: 1022";
+		rLen = 0;
+		rLoc = 29198;
+		rType = 0;
+		vrLen = 1469;
+		vrLoc = 1212;
 	};
 	D99F10A4128744B300A48041 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -240,44 +304,32 @@
 		vrLen = 224;
 		vrLoc = 0;
 	};
-	D99F10B11287460100A48041 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D5B49B7048680CD000E48DA /* Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			CFBundleVersion,
-		);
-		name = /Users/streeter/dev/aperture/FacebookExporter/Info.plist;
-		rLen = 0;
-		rLoc = 9223372036854775808;
-	};
 	D99F11231287643200A48041 /* FacebookPicture.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {711, 572}}";
-			sepNavSelRange = "{0, 871}";
+			sepNavIntBoundsRect = "{{0, 0}, {913, 572}}";
+			sepNavSelRange = "{179, 0}";
 			sepNavVisRange = "{0, 871}";
 		};
 	};
 	D99F11241287643200A48041 /* FacebookPicture.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {987, 1547}}";
+			sepNavIntBoundsRect = "{{0, 0}, {913, 1547}}";
 			sepNavSelRange = "{227, 0}";
-			sepNavVisRange = "{49, 695}";
+			sepNavVisRange = "{0, 663}";
 		};
 	};
 	D99F136C1287FE5400A48041 /* FacebookRequest.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {913, 1482}}";
-			sepNavSelRange = "{1946, 0}";
-			sepNavVisRange = "{1557, 1233}";
+			sepNavIntBoundsRect = "{{0, 0}, {913, 1508}}";
+			sepNavSelRange = "{1906, 0}";
+			sepNavVisRange = "{0, 1243}";
 		};
 	};
 	D99F136D1287FE5400A48041 /* FacebookRequest.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {913, 4797}}";
-			sepNavSelRange = "{7272, 5}";
-			sepNavVisRange = "{6803, 1294}";
+			sepNavIntBoundsRect = "{{0, 0}, {913, 4537}}";
+			sepNavSelRange = "{7103, 0}";
+			sepNavVisRange = "{592, 1469}";
 		};
 	};
 	D99F138B1287FF5500A48041 /* SBJSON.h */ = {
@@ -321,45 +373,15 @@
 		vrLen = 1987;
 		vrLoc = 0;
 	};
-	D9D2052E129E30340014BB37 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = D957ED011292FC6900418F32 /* FacebookRequestController.m */;
-		name = "FacebookRequestController.m: 112";
-		rLen = 0;
-		rLoc = 2929;
-		rType = 0;
-		vrLen = 1266;
-		vrLoc = 1887;
-	};
-	D9D2052F129E30340014BB37 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = D15DEA4D0ABF63C600CBE3A5 /* FacebookExporter.m */;
-		name = "FacebookExporter.m: 15";
-		rLen = 0;
-		rLoc = 278;
-		rType = 0;
-		vrLen = 1218;
-		vrLoc = 0;
-	};
-	D9D20533129E30990014BB37 /* PBXTextBookmark */ = {
+	D9BF0C6F12A00C2500AC4E34 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = D15DEA4D0ABF63C600CBE3A5 /* FacebookExporter.m */;
 		name = "FacebookExporter.m: 1022";
 		rLen = 0;
 		rLoc = 29198;
 		rType = 0;
-		vrLen = 1737;
-		vrLoc = 27554;
-	};
-	D9E24E36129E26CB0003A5CF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = D99F136C1287FE5400A48041 /* FacebookRequest.h */;
-		name = "FacebookRequest.h: 69";
-		rLen = 0;
-		rLoc = 1946;
-		rType = 0;
-		vrLen = 1233;
-		vrLoc = 1557;
+		vrLen = 1464;
+		vrLoc = 1217;
 	};
 	D9FBCE9E128B0F4E00EDEADA /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -373,26 +395,16 @@
 	};
 	D9FF61F8128B8F3D0012A792 /* FacebookAlbum.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {711, 575}}";
-			sepNavSelRange = "{346, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {913, 570}}";
+			sepNavSelRange = "{279, 0}";
 			sepNavVisRange = "{0, 495}";
 		};
 	};
 	D9FF61F9128B8F3D0012A792 /* FacebookAlbum.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {711, 975}}";
-			sepNavSelRange = "{954, 0}";
-			sepNavVisRange = "{429, 573}";
+			sepNavIntBoundsRect = "{{0, 0}, {913, 975}}";
+			sepNavSelRange = "{560, 0}";
+			sepNavVisRange = "{0, 604}";
 		};
-	};
-	D9FF61FB128B90540012A792 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = D99F11231287643200A48041 /* FacebookPicture.h */;
-		name = "FacebookPicture.h: 1";
-		rLen = 871;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 871;
-		vrLoc = 0;
 	};
 }
