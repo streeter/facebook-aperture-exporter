@@ -1,7 +1,7 @@
 # Facebook Aperture Exporter
 
 ## About
-This is a sinmple exporter plugin for <a href="http://www.apple.com/aperture/">Apple's Aperture</a>. I wasn't happy with the built-in syncing Aperture 3 has, and the existing export plugin for Facebook wouldn't work for me. Plus, that author wasn't returning my emails to try and get it to work. So I wrote my own.
+This is a simple exporter plugin for <a href="http://www.apple.com/aperture/">Apple's Aperture</a>. I wasn't happy with the built-in syncing Aperture 3 has, and the existing export plugin for Facebook wouldn't work for me. Plus, that author wasn't returning my emails to try and get it to work. So I wrote my own.
 
 ## Current Features
 * Logging in and out of a Facebook account
