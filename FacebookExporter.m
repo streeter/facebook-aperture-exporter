@@ -445,6 +445,15 @@ static NSString *kApplicationID = @"171090106251253";
 	// it's the same path we passed, but that's not really necessary.
 	
 	NSLog(@"exportManagerWillBeginExportToPath: %@", path);
+	
+	// Set up our progress to count exported images
+	[self lockProgress];
+	exportProgress.indeterminateProgress = YES;
+	exportProgress.currentValue = 0;
+	exportProgress.totalValue = [[self imageList] count];
+	[exportProgress.message autorelease];
+	exportProgress.message = [[self _localizedStringForKey:@"exportingImages" defaultValue:@"Step 1 of 2: Exporting images..."] retain];
+	[self unlockProgress];
 }
 
 - (BOOL)exportManagerShouldExportImageAtIndex:(unsigned)index
@@ -466,7 +475,19 @@ static NSString *kApplicationID = @"171090106251253";
 	NSLog(@"exportManagerShouldWriteImageData path: %@", path);
 	
 	// Add to the total bytes we have to upload so we can properly indicate progress.
+	NSLog(@"Total number of bytes is %d [%x] plus %d [%x]", totalBytes, totalBytes, [imageData length], [imageData length]);
 	totalBytes += [imageData length];
+	
+	// Set up our progress to count exported images
+	
+	NSString *exportString = [NSString stringWithFormat:@"Step 1 of 2: Exporting image %d of %d.", index, [[self imageList] count]];
+	
+	[self lockProgress];
+	exportProgress.currentValue = index;
+	exportProgress.indeterminateProgress = NO;
+	[exportProgress.message autorelease];
+	exportProgress.message = [[self _localizedStringForKey:@"exportingImage" defaultValue:exportString] retain];
+	[self unlockProgress];
 	
 	return YES;	
 }
@@ -486,8 +507,13 @@ static NSString *kApplicationID = @"171090106251253";
 	[picture setPath:imagePath];
 	[_exportedImagePaths addObject:picture];
 	
+	// Set up our progress to count exported images
+	NSString *exportString = [NSString stringWithFormat:@"Step 1 of 2: Exported image %d of %d.", index, [[self imageList] count]];
+	
 	// Increment the current progress
 	[self lockProgress];
+	[exportProgress.message autorelease];
+	exportProgress.message = [[self _localizedStringForKey:@"exportedImage" defaultValue:exportString] retain];
 	exportProgress.currentValue++;
 	[self unlockProgress];
 }
@@ -505,17 +531,9 @@ static NSString *kApplicationID = @"171090106251253";
 	// simultaneous uploads. But the solution that lets Aperture write them all to disk first, and then uploads them one-by-one is 
 	// the simplest for this example.
 	
-	// Set up our progress to count uploaded bytes instead of images
-	[self lockProgress];
-	exportProgress.currentValue = 0;
-	exportProgress.totalValue = totalBytes;
-	[exportProgress.message autorelease];
-	exportProgress.message = [[self _localizedStringForKey:@"uploadingImages" defaultValue:@"Step 2 of 2: Uploading Images..."] retain];
-	[self unlockProgress];
 	
+	[self _incrementUploadProgress:0];
 	
-	// If we get here, then either there were no file name collisions, or the user chose to overwrite the existing files on the server.
-	// Begin uploading
 	[self _uploadNextImage];
 }
 
@@ -668,7 +686,7 @@ static NSString *kApplicationID = @"171090106251253";
 		{
 			// Set our progress before beginning export activity
 			[self lockProgress];
-			exportProgress.totalValue = [_exportManager imageCount];
+			exportProgress.totalValue = 1;
 			exportProgress.currentValue = 1;
 			exportProgress.indeterminateProgress = NO;
 			exportProgress.message = [[self _localizedStringForKey:@"preparingImages" defaultValue:@"Step 1 of 2: Preparing Images..."] retain];
@@ -965,6 +983,9 @@ static NSString *kApplicationID = @"171090106251253";
 		NSString *imagePath = [picture path];
 		[fileManager removeFileAtPath:imagePath handler:nil];
 		[_exportedImagePaths removeObjectAtIndex:0];
+		
+		[self _incrementUploadProgress:[[picture data] length]];
+		
 		[picture release];
 		
 		// Upload the next file
@@ -994,6 +1015,7 @@ static NSString *kApplicationID = @"171090106251253";
 	} else if ([self shouldCancelUploadActivity]) {
 		[_exportManager shouldCancelExport];
 	} else {
+		
 		// Read in our image data
 		FacebookPicture *picture = [_exportedImagePaths objectAtIndex:0];
 		NSString *nextImagePath = [picture path];
@@ -1027,8 +1049,16 @@ static NSString *kApplicationID = @"171090106251253";
 
 - (void)_incrementUploadProgress:(SInt32)bytesWritten
 {
+	NSString *exportString = [NSString stringWithFormat:@"Step 2 of 2: Uploading image %d of %d.",
+							  ([[self imageList] count] - [_exportedImagePaths count]),
+							  [[self imageList] count]];
+	
 	[self lockProgress];
-	exportProgress.currentValue += bytesWritten;
+	exportProgress.indeterminateProgress = NO;
+	[exportProgress.message autorelease];
+	exportProgress.message = [[self _localizedStringForKey:@"exportingImage" defaultValue:exportString] retain];
+	exportProgress.currentValue = ([[self imageList] count] - [_exportedImagePaths count]);
+	exportProgress.totalValue = [[self imageList] count];
 	[self unlockProgress];
 }
 
