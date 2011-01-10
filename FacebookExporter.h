@@ -60,7 +60,6 @@
 	
 	// Outles of authentication sheet.
 	IBOutlet NSWindow *authenticationWindow;
-	IBOutlet NSButton *cancelAuthenticationButton;
 	IBOutlet NSButton *connectButton;
 	IBOutlet WebView *embeddedWebView;
 	
@@ -118,7 +117,7 @@
 #pragma mark Authentication Actions
 - (void)finishGetUserInformation:(NSString *)userid username:(NSString *)username error:(NSString *)message;
 
-- (IBAction)cancelAuthenticationWindow:(id)sender;
+- (void)cancelAuthenticationWindow;
 - (IBAction)connectToFacebook:(id)sender;
 - (IBAction)logOut:(id)sender;
 
