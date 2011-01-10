@@ -51,6 +51,7 @@
 static NSString *kUsernameTitleFormat = @"Logged in as %@";
 
 static NSString *kUserDefaultAccessToken = @"ApertureFacebookPluginDefaultAccessToken";
+static NSString *kUserDefaultAuthenticated = @"ApertureFacebookPluginDefaultAuthenticated";
 
 
 static NSString *kOAuthURL = @"https://graph.facebook.com/oauth/authorize";
@@ -59,7 +60,7 @@ static NSString *kRedirectURL = @"http://www.facebook.com/connect/login_success.
 static NSString *kSDKVersion = @"ios";
 static NSString *kFBAccessToken = @"access_token=";
 static NSString *kFBExpiresIn = @"expires_in=";
-//static NSString *kFBErrorReason = @"error_reason=";
+static NSString *kFBErrorReason = @"error_reason";
 static NSString *kApplicationID = @"171090106251253";
 
 
@@ -128,6 +129,14 @@ static NSString *kApplicationID = @"171090106251253";
 		_albumList = [[NSMutableArray alloc] init];
 		
 		_tableColumnWidth = 129.0;
+		
+		// Cleanup Aperture Propertylist from accessToken 
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults]; 
+		if ([defaults stringForKey:kUserDefaultAccessToken]) {
+			[defaults removeObjectForKey:kUserDefaultAccessToken];
+			[defaults setBool:YES forKey:kUserDefaultAuthenticated];
+		}
+		
 		[self setAuthenticated:NO];
 		[self setShouldCancelUploadActivity:NO];
 		[self setSelectedAlbum:nil];
@@ -240,11 +249,15 @@ static NSString *kApplicationID = @"171090106251253";
 	NSURL *url = [self generateURL:kOAuthURL params:params];
 	[[embeddedWebView mainFrame] loadRequest:[NSURLRequest requestWithURL:url]];
 	
-	[NSApp beginSheet:authenticationWindow
-	   modalForWindow:[_exportManager window]
-		modalDelegate:self
-	   didEndSelector:nil
-		  contextInfo:nil];
+	if (_authenticated) 
+		[self _displayConnectionSheet:@"Try to login...."];
+	else {
+		[NSApp beginSheet:authenticationWindow
+		   modalForWindow:[_exportManager window]
+			modalDelegate:self
+		   didEndSelector:nil
+			  contextInfo:nil];
+	}
 }
 
 - (void)_hideAuthenticationSheet
@@ -345,8 +358,26 @@ static NSString *kApplicationID = @"171090106251253";
 		
 		// TODO - handle the expires correctly.
 		
-		[self connectToFacebook:self];
+		if (!accessToken) 
+			[self cancelAuthenticationWindow];
+		else 
+			[self connectToFacebook:self];
     }
+	else {
+		NSString *err = [self extractParameter:kFBErrorReason fromURL:url];
+
+		if (err) {
+			[self setAuthenticated:NO];
+			[self _hideConnectionSheet];
+			
+			[NSApp beginSheet:authenticationWindow
+			   modalForWindow:[_exportManager window]
+				modalDelegate:self
+			   didEndSelector:nil
+				  contextInfo:nil];
+		}
+	}
+
 }
 
 
@@ -596,18 +627,10 @@ static NSString *kApplicationID = @"171090106251253";
 
 - (void)authenticateWithSavedData
 {
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults] ; 
-	NSString *accessToken = [defaults stringForKey:kUserDefaultAccessToken];
-	accessToken = nil;
-	if (accessToken && [accessToken length]) {
-		NSLog(@"Got saved access token: %@", accessToken);
-		[self setAccessToken:accessToken];
-		
-		[self getUserInformation];
-	} else {
-		NSLog(@"No saved access token, so authenticating with Facebook.");
-		[self _authenticate];
-	}
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults]; 
+	[self setAuthenticated:[defaults boolForKey:kUserDefaultAuthenticated]];
+	
+	[self _authenticate];
 }
 
 - (void)_authenticate
@@ -631,9 +654,9 @@ static NSString *kApplicationID = @"171090106251253";
 														  defaultValue:errorMessage]];
 }
 
-- (IBAction)cancelAuthenticationWindow:(id)sender
+- (void)cancelAuthenticationWindow
 {
-	NSLog(@"cancelAuthentication %@", [sender description]);
+	NSLog(@"%@",@"cancelAuthentication");
 	
 	[self _hideAuthenticationSheet];
 	
@@ -645,7 +668,7 @@ static NSString *kApplicationID = @"171090106251253";
 	[self _hideAuthenticationSheet];
 	
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	[defaults setObject:[self accessToken] forKey:kUserDefaultAccessToken];
+	[defaults setBool:_authenticated forKey:kUserDefaultAuthenticated];
 	
 	[self getUserInformation];
 }
@@ -723,7 +746,7 @@ static NSString *kApplicationID = @"171090106251253";
 	[self setAccessToken:nil];
 	[self setUsername:nil];
 	
-	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefaultAccessToken];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefaultAuthenticated];
 	
 	NSHTTPCookieStorage *cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
 	NSArray *facebookCookies = [cookies cookiesForURL:[NSURL URLWithString:@"http://login.facebook.com"]];
@@ -752,7 +775,7 @@ static NSString *kApplicationID = @"171090106251253";
 
 - (void)fetchAllAlbums
 {
-	[self _displayConnectionSheet:@"Getching list of albums..."];
+	[self _displayConnectionSheet:@"Fetching list of albums..."];
 	
 	[[self requestController] getAlbumList:@"me"];
 }
