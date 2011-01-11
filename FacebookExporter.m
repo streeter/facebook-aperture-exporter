@@ -742,7 +742,6 @@ static NSString *kApplicationID = @"171090106251253";
 	
 	[[self requestController] logOut];
 	
-	[_accessToken release];
 	[self setAccessToken:nil];
 	[self setUsername:nil];
 	
@@ -904,9 +903,10 @@ static NSString *kApplicationID = @"171090106251253";
 
 - (void)setAccessToken:(NSString *)aValue
 {
-	NSString *oldAccessToken = _accessToken;
-	_accessToken = [aValue copy];
-	[oldAccessToken release];
+	if (_accessToken != aValue) {
+		[_accessToken release];
+		_accessToken = [aValue copy];
+	}
 	
 	[[self requestController] setAccessToken:aValue];
 	
