@@ -24,7 +24,22 @@
 		D99F13971287FF5500A48041 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D99F13901287FF5500A48041 /* SBJsonParser.m */; };
 		D99F13981287FF5500A48041 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D99F13921287FF5500A48041 /* SBJsonWriter.m */; };
 		D9FF61FA128B8F3D0012A792 /* FacebookAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF61F9128B8F3D0012A792 /* FacebookAlbum.m */; };
+		FA39DCC712E426440058685C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA39DCC612E426440058685C /* Sparkle.framework */; };
+		FA39DD7612E426650058685C /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA39DCC612E426440058685C /* Sparkle.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FA39DD7C12E426800058685C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FA39DD7612E426650058685C /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -65,6 +80,7 @@
 		D99F13921287FF5500A48041 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		D9FF61F8128B8F3D0012A792 /* FacebookAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookAlbum.h; sourceTree = "<group>"; };
 		D9FF61F9128B8F3D0012A792 /* FacebookAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookAlbum.m; sourceTree = "<group>"; };
+		FA39DCC612E426440058685C /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +91,7 @@
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 				D15DEA4A0ABF639500CBE3A5 /* PluginManager.framework in Frameworks */,
 				D99F121D1287EC4300A48041 /* WebKit.framework in Frameworks */,
+				FA39DCC712E426440058685C /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +151,7 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA39DCC612E426440058685C /* Sparkle.framework */,
 				D15DEA490ABF639500CBE3A5 /* PluginManager.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
 			);
@@ -208,6 +226,7 @@
 				8D5B49AF048680CD000E48DA /* Resources */,
 				8D5B49B1048680CD000E48DA /* Sources */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
+				FA39DD7C12E426800058685C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -315,6 +334,10 @@
 				COPY_PHASE_STRIP = NO;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = /;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -337,6 +360,10 @@
 				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = /;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -367,6 +394,7 @@
 				PREBINDING = NO;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
 				STRIP_INSTALLED_PRODUCT = NO;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -387,6 +415,7 @@
 				PREBINDING = NO;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
 				STRIP_INSTALLED_PRODUCT = NO;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
 		};
