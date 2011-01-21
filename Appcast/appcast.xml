@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+   <channel>
+      <title>FacebookExporter Changelog</title>
+      <link>https://github.com/streeter/facebook-aperture-exporter/raw/master/Appcast/appcast.xml</link>
+      <description>Most recent changes with links to updates.</description>
+      <language>en</language>
+         <item>
+            <title>Version 1.2</title>
+			<sparkle:releaseNotesLink>https://github.com/streeter/facebook-aperture-exporter/raw/master/Appcast/rnotes.html</sparkle:releaseNotesLink>
+            <pubDate>Mon, 17 Jan 2006 10:30:11 +0000</pubDate>
+            <enclosure url="https://github.com/downloads/streeter/facebook-aperture-exporter/FacebookExporter.v1.2.ApertureExport.zip" sparkle:version="1.2" length="1661387" type="application/octet-stream" sparkle:dsaSignature="MC0CFEOoC20i6GyFPkTGvd7r12YsSDq+AhUAjoPxtjDgydQouNsKc1x2Dcfl+8Y=" />
+         </item>
+   </channel>
+</rss>
