@@ -14,6 +14,7 @@
 #import "FacebookPicture.h"
 #import "FacebookRequestController.h"
 #import <WebKit/WebKit.h>
+#import <Sparkle/Sparkle.h>
 
 
 @interface FacebookExporter : NSObject <ApertureExportPlugIn>

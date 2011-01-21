@@ -26,6 +26,7 @@
 		D9FF61FA128B8F3D0012A792 /* FacebookAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF61F9128B8F3D0012A792 /* FacebookAlbum.m */; };
 		FA39DCC712E426440058685C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA39DCC612E426440058685C /* Sparkle.framework */; };
 		FA39DD7612E426650058685C /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA39DCC612E426440058685C /* Sparkle.framework */; };
+		FA39DDDC12E439BB0058685C /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = FA39DDDB12E439BB0058685C /* dsa_pub.pem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,6 +82,7 @@
 		D9FF61F8128B8F3D0012A792 /* FacebookAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookAlbum.h; sourceTree = "<group>"; };
 		D9FF61F9128B8F3D0012A792 /* FacebookAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookAlbum.m; sourceTree = "<group>"; };
 		FA39DCC612E426440058685C /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		FA39DDDB12E439BB0058685C /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA39DDDB12E439BB0058685C /* dsa_pub.pem */,
 				D15DEA500ABF641300CBE3A5 /* FacebookExporter.nib */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				D118EA640AC08CCB006DD2FE /* Localizable.strings */,
@@ -274,6 +277,7 @@
 				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
 				D15DEA520ABF641300CBE3A5 /* FacebookExporter.nib in Resources */,
 				D118EA660AC08CCB006DD2FE /* Localizable.strings in Resources */,
+				FA39DDDC12E439BB0058685C /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

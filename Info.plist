@@ -15,11 +15,15 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.1</string>
+	<string>1.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.1.1</string>
+	<string>1.2</string>
+	<key>SUFeedURL</key>
+	<string>https://github.com/streeter/facebook-aperture-exporter/raw/master/Appcast/appcast.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>
 	<key>NSPrincipalClass</key>

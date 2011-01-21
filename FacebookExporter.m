@@ -197,6 +197,12 @@ static NSString *kApplicationID = @"171090106251253";
 	NSString *versionString = [NSString stringWithFormat:@"Facebook Exporter Version %@", version];
 	[versionTextField setTitle:versionString];
 	
+	NSString *pluginBundleID = [[[NSBundle bundleForClass: [self class]] infoDictionary] objectForKey:@"CFBundleIdentifier"];
+	NSLog(@"Plugin Bundle ID: %@", pluginBundleID);
+	SUUpdater *updater = [SUUpdater updaterForBundle:[NSBundle bundleWithIdentifier:pluginBundleID]];
+	[updater setAutomaticallyChecksForUpdates:YES];
+	[updater resetUpdateCycle];
+	
 	return settingsView;
 }
 
