@@ -14,7 +14,9 @@ This is a simple exporter plugin for <a href="http://www.apple.com/aperture/">Ap
 * The export progress information in the Activity panel is pretty much broken. At least you know it is still exporting.
 * The caption for a created Facebook album is not set. Still figuring out why that is the case.
 * The open album when upload is complete checkbox does not work
-* [fixed] When starting the plugin, a sheet displays for a moment while we check that we have the Facebook access token. This shouldn't be displayed until we need the user to login.
+* The Sparkle update framework only runs when the plugin is closed.
+* The Sparkle framework doesn't reopen Aperture after updating the plugin. This
+means you need to open Aperture manually.
 
 ## Nice Features to Have
 * Growl notifications
