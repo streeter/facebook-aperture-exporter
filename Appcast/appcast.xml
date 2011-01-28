@@ -6,8 +6,20 @@
       <description>Most recent changes with links to updates.</description>
       <language>en</language>
 	  <item>
+			<title>Version 1.2.1</title>
+			<sparkle:releaseNotesLink>https://github.com/streeter/facebook-aperture-exporter/raw/master/release_notes.md</sparkle:releaseNotesLink>
+			<pubDate>Fri, 28 Jan 2011 00:29:05 -0800</pubDate>
+			<enclosure
+				url="https://github.com/downloads/streeter/facebook-aperture-exporter/FacebookExporter.1.2.1.ApertureExport.zip"
+				sparkle:version="1.2.1"
+				type="application/octet-stream"
+				length="720116"
+				sparkle:dsaSignature="MCwCFBGdLIfD2KD1RMOr3upuwMI7TmaoAhQxSdGdnO5Q94uNUhdgZZGtusJcog=="
+			/>
+		</item>
+	  <item>
 			<title>Version 1.2.0.1</title>
-			<sparkle:releaseNotesLink>https://github.com/streeter/facebook-aperture-exporter/raw/master/Appcast/rnotes.html#version-1.2.0.1</sparkle:releaseNotesLink>
+			<sparkle:releaseNotesLink>https://github.com/streeter/facebook-aperture-exporter/raw/master/release_notes.md</sparkle:releaseNotesLink>
 			<pubDate>Thu, 27 Jan 2011 23:48:04 -0800</pubDate>
 			<enclosure
 				url="https://github.com/downloads/streeter/facebook-aperture-exporter/FacebookExporter.1.2.0.1.ApertureExport.zip"
@@ -19,7 +31,7 @@
 		</item>
 	  <item>
 			<title>Version 1.2</title>
-			<sparkle:releaseNotesLink>https://github.com/streeter/facebook-aperture-exporter/raw/master/Appcast/rnotes.html#version-1.2</sparkle:releaseNotesLink>
+			<sparkle:releaseNotesLink>https://github.com/streeter/facebook-aperture-exporter/raw/master/release_notes.md</sparkle:releaseNotesLink>
 			<pubDate>Thu, 27 Jan 2011 23:37:47 -0800</pubDate>
 			<enclosure
 				url="https://github.com/downloads/streeter/facebook-aperture-exporter/FacebookExporter.1.2.ApertureExport.zip"

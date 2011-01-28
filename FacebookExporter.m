@@ -200,8 +200,14 @@ static NSString *kApplicationID = @"171090106251253";
 	NSString *pluginBundleID = [[[NSBundle bundleForClass: [self class]] infoDictionary] objectForKey:@"CFBundleIdentifier"];
 	NSLog(@"Plugin Bundle ID: %@", pluginBundleID);
 	SUUpdater *updater = [SUUpdater updaterForBundle:[NSBundle bundleWithIdentifier:pluginBundleID]];
+	
+	[updater setDelegate:self];
+	
+	NSLog(@"Plugin feed URL: %@", [updater feedURL]);
+	
 	[updater setAutomaticallyChecksForUpdates:YES];
 	[updater resetUpdateCycle];
+	[updater checkForUpdatesInBackground];
 	
 	return settingsView;
 }
@@ -985,6 +991,24 @@ static NSString *kApplicationID = @"171090106251253";
 		[self setThumbnail:thumb forImageatIndex:[onekey intValue]];
 		onekey = [e nextObject];
 	}
+}
+
+#pragma mark -
+// Sparkle Delegate Methods
+#pragma mark Sparkle Delegate Methods
+- (void)updater:(SUUpdater *)updater didFinishLoadingAppcast:(SUAppcast *)appcast
+{
+	NSLog(@"updater:didFinishLoadingAppcast:%@", appcast);
+}
+
+- (void)updater:(SUUpdater *)updater didFindValidUpdate:(SUAppcastItem *)update
+{
+	NSLog(@"updater:didFindValidUpdate:%@", update);
+}
+
+- (void)updaterDidNotFindUpdate:(SUUpdater *)update
+{
+	NSLog(@"updaterDidNotFindUpdate");
 }
 
 

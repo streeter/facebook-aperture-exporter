@@ -167,6 +167,12 @@
 - (NSURLRequest *)webView:(WebView *)sender resource:(id)identifier willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse fromDataSource:(WebDataSource *)dataSource;
 - (void)webView:(WebView *)sender didCommitLoadForFrame:(WebFrame *)frame;
 
+#pragma mark -
+// Sparkle Delegate Methods
+#pragma mark Sparkle Delegate Methods
+- (void)updater:(SUUpdater *)updater didFinishLoadingAppcast:(SUAppcast *)appcast;
+- (void)updater:(SUUpdater *)updater didFindValidUpdate:(SUAppcastItem *)update;
+- (void)updaterDidNotFindUpdate:(SUUpdater *)update;
 
 #pragma mark -
 // Private Methods

@@ -30,8 +30,6 @@
 		D15DEA520ABF641300CBE3A5 /* FacebookExporter.nib in Resources */ = {isa = PBXBuildFile; fileRef = D15DEA500ABF641300CBE3A5 /* FacebookExporter.nib */; };
 		D930C82212F2A12C0042BBF4 /* appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = D930C81D12F2A12C0042BBF4 /* appcast.xml */; };
 		D930C82312F2A12C0042BBF4 /* generate_keys.rb in Resources */ = {isa = PBXBuildFile; fileRef = D930C81E12F2A12C0042BBF4 /* generate_keys.rb */; };
-		D930C82412F2A12C0042BBF4 /* rnotes.css in Resources */ = {isa = PBXBuildFile; fileRef = D930C81F12F2A12C0042BBF4 /* rnotes.css */; };
-		D930C82512F2A12C0042BBF4 /* rnotes.html in Resources */ = {isa = PBXBuildFile; fileRef = D930C82012F2A12C0042BBF4 /* rnotes.html */; };
 		D930C82612F2A12C0042BBF4 /* sign_update.rb in Resources */ = {isa = PBXBuildFile; fileRef = D930C82112F2A12C0042BBF4 /* sign_update.rb */; };
 		D957ED021292FC6900418F32 /* FacebookRequestController.m in Sources */ = {isa = PBXBuildFile; fileRef = D957ED011292FC6900418F32 /* FacebookRequestController.m */; };
 		D99F11251287643200A48041 /* FacebookPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = D99F11241287643200A48041 /* FacebookPicture.m */; };
@@ -89,10 +87,10 @@
 		D15DEA4E0ABF63C600CBE3A5 /* FacebookExporter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = FacebookExporter.h; sourceTree = "<group>"; };
 		D15DEA510ABF641300CBE3A5 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/FacebookExporter.nib; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		D92A05BD12F2B54600C99223 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		D92A05BE12F2B55C00C99223 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		D930C81D12F2A12C0042BBF4 /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		D930C81E12F2A12C0042BBF4 /* generate_keys.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = generate_keys.rb; sourceTree = "<group>"; };
-		D930C81F12F2A12C0042BBF4 /* rnotes.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = rnotes.css; sourceTree = "<group>"; };
-		D930C82012F2A12C0042BBF4 /* rnotes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = rnotes.html; sourceTree = "<group>"; };
 		D930C82112F2A12C0042BBF4 /* sign_update.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = sign_update.rb; sourceTree = "<group>"; };
 		D957ED001292FC6900418F32 /* FacebookRequestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookRequestController.h; sourceTree = "<group>"; };
 		D957ED011292FC6900418F32 /* FacebookRequestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookRequestController.m; sourceTree = "<group>"; };
@@ -160,6 +158,8 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D92A05BE12F2B55C00C99223 /* README.md */,
+				D92A05BD12F2B54600C99223 /* release_notes.md */,
 				D930C81C12F2A12C0042BBF4 /* Appcast */,
 				FA39DDDB12E439BB0058685C /* dsa_pub.pem */,
 				D15DEA500ABF641300CBE3A5 /* FacebookExporter.nib */,
@@ -240,8 +240,6 @@
 			children = (
 				D930C81D12F2A12C0042BBF4 /* appcast.xml */,
 				D930C81E12F2A12C0042BBF4 /* generate_keys.rb */,
-				D930C81F12F2A12C0042BBF4 /* rnotes.css */,
-				D930C82012F2A12C0042BBF4 /* rnotes.html */,
 				D930C82112F2A12C0042BBF4 /* sign_update.rb */,
 			);
 			path = Appcast;
@@ -329,8 +327,6 @@
 				FA39DDDC12E439BB0058685C /* dsa_pub.pem in Resources */,
 				D930C82212F2A12C0042BBF4 /* appcast.xml in Resources */,
 				D930C82312F2A12C0042BBF4 /* generate_keys.rb in Resources */,
-				D930C82412F2A12C0042BBF4 /* rnotes.css in Resources */,
-				D930C82512F2A12C0042BBF4 /* rnotes.html in Resources */,
 				D930C82612F2A12C0042BBF4 /* sign_update.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +345,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "set -o errexit\n\n[ $BUILD_STYLE = Release ] || { echo Distribution target requires \"'Release'\" build style; false; }\n\nVERSION=$(defaults read \"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.ApertureExport/Contents/Info\" CFBundleVersion)\nDOWNLOAD_BASE_URL=\"https://github.com/downloads/streeter/facebook-aperture-exporter\"\nRELEASENOTES_URL=\"https://github.com/streeter/facebook-aperture-exporter/raw/master/Appcast/rnotes.html#version-$VERSION\"\n\nARCHIVE_FILENAME=\"$PROJECT_NAME.$VERSION.ApertureExport.zip\"\nDOWNLOAD_URL=\"$DOWNLOAD_BASE_URL/$ARCHIVE_FILENAME\"\nKEYCHAIN_PRIVKEY_NAME=\"Sparkle Private Key 1\"\n\nWD=$PWD\ncd \"$BUILT_PRODUCTS_DIR\"\nrm -f \"$PROJECT_NAME\"*.zip\nditto -ck --keepParent \"$PROJECT_NAME.ApertureExport\" \"$ARCHIVE_FILENAME\"\n\nSIZE=$(stat -f %z \"$ARCHIVE_FILENAME\")\nPUBDATE=$(LC_TIME=en_US date +\"%a, %d %b %G %T %z\")\nSIGNATURE=$(\n\topenssl dgst -sha1 -binary < \"$ARCHIVE_FILENAME\" \\\n\t| openssl dgst -dss1 -sign <(security find-generic-password -g -s \"$KEYCHAIN_PRIVKEY_NAME\" 2>&1 1>/dev/null | perl -pe '($_) = /\"(.+)\"/; s/\\\\012/\\n/g' | perl -MXML::LibXML -e 'print XML::LibXML->new()->parse_file(\"-\")->findvalue(q(//string[preceding-sibling::key[1] = \"NOTE\"]))') \\\n\t| openssl enc -base64\n)\n\n[ $SIGNATURE ] || { echo Unable to load signing private key with name \"'$KEYCHAIN_PRIVKEY_NAME'\" from keychain; false; }\n\ncat <<EOF\n\t\t<item>\n\t\t\t<title>Version $VERSION</title>\n\t\t\t<sparkle:releaseNotesLink>$RELEASENOTES_URL</sparkle:releaseNotesLink>\n\t\t\t<pubDate>$PUBDATE</pubDate>\n\t\t\t<enclosure\n\t\t\t\turl=\"$DOWNLOAD_URL\"\n\t\t\t\tsparkle:version=\"$VERSION\"\n\t\t\t\ttype=\"application/octet-stream\"\n\t\t\t\tlength=\"$SIZE\"\n\t\t\t\tsparkle:dsaSignature=\"$SIGNATURE\"\n\t\t\t/>\n\t\t</item>\nEOF";
+			shellScript = "set -o errexit\n\n[ $BUILD_STYLE = Release ] || { echo Distribution target requires \"'Release'\" build style; false; }\n\nVERSION=$(defaults read \"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.ApertureExport/Contents/Info\" CFBundleVersion)\nDOWNLOAD_BASE_URL=\"https://github.com/downloads/streeter/facebook-aperture-exporter\"\nRELEASENOTES_URL=\"https://github.com/streeter/facebook-aperture-exporter/raw/master/release_notes.md\"\n\nARCHIVE_FILENAME=\"$PROJECT_NAME.$VERSION.ApertureExport.zip\"\nDOWNLOAD_URL=\"$DOWNLOAD_BASE_URL/$ARCHIVE_FILENAME\"\nKEYCHAIN_PRIVKEY_NAME=\"Sparkle Private Key 1\"\n\nWD=$PWD\ncd \"$BUILT_PRODUCTS_DIR\"\nrm -f \"$PROJECT_NAME\"*.zip\nditto -ck --keepParent \"$PROJECT_NAME.ApertureExport\" \"$ARCHIVE_FILENAME\"\n\nSIZE=$(stat -f %z \"$ARCHIVE_FILENAME\")\nPUBDATE=$(LC_TIME=en_US date +\"%a, %d %b %G %T %z\")\nSIGNATURE=$(\n\topenssl dgst -sha1 -binary < \"$ARCHIVE_FILENAME\" \\\n\t| openssl dgst -dss1 -sign <(security find-generic-password -g -s \"$KEYCHAIN_PRIVKEY_NAME\" 2>&1 1>/dev/null | perl -pe '($_) = /\"(.+)\"/; s/\\\\012/\\n/g' | perl -MXML::LibXML -e 'print XML::LibXML->new()->parse_file(\"-\")->findvalue(q(//string[preceding-sibling::key[1] = \"NOTE\"]))') \\\n\t| openssl enc -base64\n)\n\n[ $SIGNATURE ] || { echo Unable to load signing private key with name \"'$KEYCHAIN_PRIVKEY_NAME'\" from keychain; false; }\n\ncat <<EOF\n\t\t<item>\n\t\t\t<title>Version $VERSION</title>\n\t\t\t<sparkle:releaseNotesLink>$RELEASENOTES_URL</sparkle:releaseNotesLink>\n\t\t\t<pubDate>$PUBDATE</pubDate>\n\t\t\t<enclosure\n\t\t\t\turl=\"$DOWNLOAD_URL\"\n\t\t\t\tsparkle:version=\"$VERSION\"\n\t\t\t\ttype=\"application/octet-stream\"\n\t\t\t\tlength=\"$SIZE\"\n\t\t\t\tsparkle:dsaSignature=\"$SIGNATURE\"\n\t\t\t/>\n\t\t</item>\nEOF";
 		};
 /* End PBXShellScriptBuildPhase section */
 
