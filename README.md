@@ -8,6 +8,7 @@ This is a simple exporter plugin for <a href="http://www.apple.com/aperture/">Ap
 * Album creation and selection (where to upload the photos to)
 * High resolution photo uploads to Facebook
   * Enabled by uploading large versions to Facebook (choose an export preset that will create 2048 pixels along the largest side)
+* Sparkle updating
 
 ## Known Limitations and Issues
 * The preferences button does nothing. Eventually it will show the preferences window.
