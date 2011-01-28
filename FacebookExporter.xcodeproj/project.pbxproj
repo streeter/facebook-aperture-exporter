@@ -13,6 +13,11 @@
 		D15DEA4A0ABF639500CBE3A5 /* PluginManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15DEA490ABF639500CBE3A5 /* PluginManager.framework */; };
 		D15DEA4F0ABF63C600CBE3A5 /* FacebookExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = D15DEA4D0ABF63C600CBE3A5 /* FacebookExporter.m */; };
 		D15DEA520ABF641300CBE3A5 /* FacebookExporter.nib in Resources */ = {isa = PBXBuildFile; fileRef = D15DEA500ABF641300CBE3A5 /* FacebookExporter.nib */; };
+		D930C82212F2A12C0042BBF4 /* appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = D930C81D12F2A12C0042BBF4 /* appcast.xml */; };
+		D930C82312F2A12C0042BBF4 /* generate_keys.rb in Resources */ = {isa = PBXBuildFile; fileRef = D930C81E12F2A12C0042BBF4 /* generate_keys.rb */; };
+		D930C82412F2A12C0042BBF4 /* rnotes.css in Resources */ = {isa = PBXBuildFile; fileRef = D930C81F12F2A12C0042BBF4 /* rnotes.css */; };
+		D930C82512F2A12C0042BBF4 /* rnotes.html in Resources */ = {isa = PBXBuildFile; fileRef = D930C82012F2A12C0042BBF4 /* rnotes.html */; };
+		D930C82612F2A12C0042BBF4 /* sign_update.rb in Resources */ = {isa = PBXBuildFile; fileRef = D930C82112F2A12C0042BBF4 /* sign_update.rb */; };
 		D957ED021292FC6900418F32 /* FacebookRequestController.m in Sources */ = {isa = PBXBuildFile; fileRef = D957ED011292FC6900418F32 /* FacebookRequestController.m */; };
 		D99F11251287643200A48041 /* FacebookPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = D99F11241287643200A48041 /* FacebookPicture.m */; };
 		D99F121D1287EC4300A48041 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99F121C1287EC4300A48041 /* WebKit.framework */; };
@@ -59,6 +64,11 @@
 		D15DEA4E0ABF63C600CBE3A5 /* FacebookExporter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = FacebookExporter.h; sourceTree = "<group>"; };
 		D15DEA510ABF641300CBE3A5 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/FacebookExporter.nib; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		D930C81D12F2A12C0042BBF4 /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
+		D930C81E12F2A12C0042BBF4 /* generate_keys.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = generate_keys.rb; sourceTree = "<group>"; };
+		D930C81F12F2A12C0042BBF4 /* rnotes.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = rnotes.css; sourceTree = "<group>"; };
+		D930C82012F2A12C0042BBF4 /* rnotes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = rnotes.html; sourceTree = "<group>"; };
+		D930C82112F2A12C0042BBF4 /* sign_update.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = sign_update.rb; sourceTree = "<group>"; };
 		D957ED001292FC6900418F32 /* FacebookRequestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookRequestController.h; sourceTree = "<group>"; };
 		D957ED011292FC6900418F32 /* FacebookRequestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookRequestController.m; sourceTree = "<group>"; };
 		D99F11231287643200A48041 /* FacebookPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookPicture.h; sourceTree = "<group>"; };
@@ -125,6 +135,7 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D930C81C12F2A12C0042BBF4 /* Appcast */,
 				FA39DDDB12E439BB0058685C /* dsa_pub.pem */,
 				D15DEA500ABF641300CBE3A5 /* FacebookExporter.nib */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
@@ -197,6 +208,18 @@
 				D118EB0F0AC08EAE006DD2FE /* FacebookExporter.ApertureExport */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D930C81C12F2A12C0042BBF4 /* Appcast */ = {
+			isa = PBXGroup;
+			children = (
+				D930C81D12F2A12C0042BBF4 /* appcast.xml */,
+				D930C81E12F2A12C0042BBF4 /* generate_keys.rb */,
+				D930C81F12F2A12C0042BBF4 /* rnotes.css */,
+				D930C82012F2A12C0042BBF4 /* rnotes.html */,
+				D930C82112F2A12C0042BBF4 /* sign_update.rb */,
+			);
+			path = Appcast;
 			sourceTree = "<group>";
 		};
 		D99F13851287FF5500A48041 /* JSON */ = {
@@ -278,6 +301,11 @@
 				D15DEA520ABF641300CBE3A5 /* FacebookExporter.nib in Resources */,
 				D118EA660AC08CCB006DD2FE /* Localizable.strings in Resources */,
 				FA39DDDC12E439BB0058685C /* dsa_pub.pem in Resources */,
+				D930C82212F2A12C0042BBF4 /* appcast.xml in Resources */,
+				D930C82312F2A12C0042BBF4 /* generate_keys.rb in Resources */,
+				D930C82412F2A12C0042BBF4 /* rnotes.css in Resources */,
+				D930C82512F2A12C0042BBF4 /* rnotes.html in Resources */,
+				D930C82612F2A12C0042BBF4 /* sign_update.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +415,10 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "/Library/Frameworks//**";
+				FRAMEWORK_SEARCH_PATHS = (
+					.,
+					"/Library/Frameworks//**",
+				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
@@ -410,7 +441,10 @@
 					"$(ARCHS_STANDARD_64_BIT)",
 				);
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = "/Library/Frameworks//**";
+				FRAMEWORK_SEARCH_PATHS = (
+					.,
+					"/Library/Frameworks//**",
+				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
