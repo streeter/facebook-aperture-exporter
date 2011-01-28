@@ -256,7 +256,7 @@ static NSString *kApplicationID = @"171090106251253";
 	[[embeddedWebView mainFrame] loadRequest:[NSURLRequest requestWithURL:url]];
 	
 	if (_authenticated) 
-		[self _displayConnectionSheet:@"Try to login...."];
+		[self _displayConnectionSheet:@"Attempting to login...."];
 	else {
 		[NSApp beginSheet:authenticationWindow
 		   modalForWindow:[_exportManager window]
