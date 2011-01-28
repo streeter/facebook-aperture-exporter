@@ -5,11 +5,17 @@
       <link>https://github.com/streeter/facebook-aperture-exporter/raw/master/Appcast/appcast.xml</link>
       <description>Most recent changes with links to updates.</description>
       <language>en</language>
-         <item>
-            <title>Version 1.2</title>
-			<sparkle:releaseNotesLink>https://github.com/streeter/facebook-aperture-exporter/raw/master/Appcast/rnotes.html</sparkle:releaseNotesLink>
-            <pubDate>Mon, 17 Jan 2006 10:30:11 +0000</pubDate>
-            <enclosure url="https://github.com/downloads/streeter/facebook-aperture-exporter/FacebookExporter.v1.2.ApertureExport.zip" sparkle:version="1.2" length="1661387" type="application/octet-stream" sparkle:dsaSignature="MC0CFEOoC20i6GyFPkTGvd7r12YsSDq+AhUAjoPxtjDgydQouNsKc1x2Dcfl+8Y=" />
-         </item>
+	  <item>
+			<title>Version 1.2</title>
+			<sparkle:releaseNotesLink>https://github.com/streeter/facebook-aperture-exporter/raw/master/Appcast/rnotes.html#version-1.2</sparkle:releaseNotesLink>
+			<pubDate>Thu, 27 Jan 2011 23:37:47 -0800</pubDate>
+			<enclosure
+				url="https://github.com/downloads/streeter/facebook-aperture-exporter/FacebookExporter.1.2.ApertureExport.zip"
+				sparkle:version="1.2"
+				type="application/octet-stream"
+				length="719298"
+				sparkle:dsaSignature="MC0CFQDINffrmXYTv29wFXRPcS/Owh3NAwIUEY50XjWNE6Fu3JcrqB4RqDtmZUI="
+			/>
+		</item>
    </channel>
 </rss>
