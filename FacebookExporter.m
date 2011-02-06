@@ -199,15 +199,29 @@ static NSString *kApplicationID = @"171090106251253";
 	
 	NSString *pluginBundleID = [[[NSBundle bundleForClass: [self class]] infoDictionary] objectForKey:@"CFBundleIdentifier"];
 	NSLog(@"Plugin Bundle ID: %@", pluginBundleID);
-	SUUpdater *updater = [SUUpdater updaterForBundle:[NSBundle bundleWithIdentifier:pluginBundleID]];
 	
-	[updater setDelegate:self];
+	_updateNow = NO;
 	
-	NSLog(@"Plugin feed URL: %@", [updater feedURL]);
-	
-	[updater setAutomaticallyChecksForUpdates:YES];
-	[updater resetUpdateCycle];
-	[updater checkForUpdatesInBackground];
+	if ([PlugInUpdateCheck isUpdateAvailable]) {
+		SUUpdater *updater = [SUUpdater updaterForBundle:[NSBundle bundleWithIdentifier:pluginBundleID]];
+		[updater setDelegate:self];
+		[updater setAutomaticallyChecksForUpdates:YES];
+		[updater resetUpdateCycle];
+		[updater checkForUpdatesInBackground];
+
+		NSLog(@"Plugin feed URL: %@", [updater feedURL]);
+
+		NSString *alertMessage = [self _localizedStringForKey:@"updateAvailable" defaultValue:@"A new version of Facebook Exporter is available! Would you like to update it now?"];
+		NSString *informativeText = @"";
+		NSAlert *alert = [NSAlert alertWithMessageText:alertMessage 
+										 defaultButton:[self _localizedStringForKey:@"updateNow" defaultValue:@"Update now"] 
+									   alternateButton:[self _localizedStringForKey:@"updateLater" defaultValue:@"Update later"] 
+										   otherButton:nil 
+							 informativeTextWithFormat:informativeText];
+		[alert setAlertStyle:NSInformationalAlertStyle];
+		
+		_updateNow = ([alert runModal] == NSAlertDefaultReturn);
+	}
 	
 	return settingsView;
 }
@@ -642,7 +656,10 @@ static NSString *kApplicationID = @"171090106251253";
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults]; 
 	[self setAuthenticated:[defaults boolForKey:kUserDefaultAuthenticated]];
 	
-	[self _authenticate];
+	if (_updateNow)
+		[self cancelAuthenticationWindow];
+	else
+		[self _authenticate];
 }
 
 - (void)_authenticate
@@ -1009,6 +1026,12 @@ static NSString *kApplicationID = @"171090106251253";
 - (void)updaterDidNotFindUpdate:(SUUpdater *)update
 {
 	NSLog(@"updaterDidNotFindUpdate");
+}
+
+- (NSString *)pathToRelaunchForUpdater:(SUUpdater *)update
+{
+	NSLog(@"pathToRelaunchForUpdater:  %@", [[NSBundle mainBundle] bundlePath]);
+	return [[NSBundle mainBundle] bundlePath];
 }
 
 

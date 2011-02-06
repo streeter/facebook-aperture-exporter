@@ -13,6 +13,7 @@
 #import "FacebookAlbum.h"
 #import "FacebookPicture.h"
 #import "FacebookRequestController.h"
+#import "PlugInUpdateCheck.h"
 #import <WebKit/WebKit.h>
 #import <Sparkle/Sparkle.h>
 
@@ -97,6 +98,8 @@
 	BOOL _authenticated;
 	BOOL _shouldCancelUploadActivity;
 	
+	BOOL _updateNow;
+	
 	FacebookRequestController *_requestController;
 }
 
@@ -173,6 +176,7 @@
 - (void)updater:(SUUpdater *)updater didFinishLoadingAppcast:(SUAppcast *)appcast;
 - (void)updater:(SUUpdater *)updater didFindValidUpdate:(SUAppcastItem *)update;
 - (void)updaterDidNotFindUpdate:(SUUpdater *)update;
+- (NSString *)pathToRelaunchForUpdater:(SUUpdater *)updater;
 
 #pragma mark -
 // Private Methods
