@@ -60,6 +60,8 @@
 		FA5D262A12FF052D00ADCB6D /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D261A12FF052D00ADCB6D /* CXMLNode_XPathExtensions.m */; };
 		FA5D262B12FF052D00ADCB6D /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D261D12FF052D00ADCB6D /* CTidy.m */; };
 		FA5D264A12FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D264912FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m */; };
+		FAA0F6E113AD253D009CF224 /* BundleUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F6E013AD253D009CF224 /* BundleUserDefaults.m */; };
+		FAA0F6E413AD259F009CF224 /* PlugInDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F6E313AD259F009CF224 /* PlugInDefaults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +164,10 @@
 		FA5D261E12FF052D00ADCB6D /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
 		FA5D264812FF064F00ADCB6D /* PlugInSUStandardVersionComparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlugInSUStandardVersionComparator.h; sourceTree = "<group>"; };
 		FA5D264912FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlugInSUStandardVersionComparator.m; sourceTree = "<group>"; };
+		FAA0F6DF13AD253D009CF224 /* BundleUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BundleUserDefaults.h; sourceTree = "<group>"; };
+		FAA0F6E013AD253D009CF224 /* BundleUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BundleUserDefaults.m; sourceTree = "<group>"; };
+		FAA0F6E213AD259F009CF224 /* PlugInDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlugInDefaults.h; sourceTree = "<group>"; };
+		FAA0F6E313AD259F009CF224 /* PlugInDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlugInDefaults.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +225,8 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FAA0F6DF13AD253D009CF224 /* BundleUserDefaults.h */,
+				FAA0F6E013AD253D009CF224 /* BundleUserDefaults.m */,
 				FA5D264812FF064F00ADCB6D /* PlugInSUStandardVersionComparator.h */,
 				FA5D264912FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m */,
 				D15DEA4E0ABF63C600CBE3A5 /* FacebookExporter.h */,
@@ -233,6 +241,8 @@
 				D957ED011292FC6900418F32 /* FacebookRequestController.m */,
 				FA4CBAE413ACDEAE009E0372 /* PlugInUpdateCheck.h */,
 				FA4CBAE513ACDEAE009E0372 /* PlugInUpdateCheck.m */,
+				FAA0F6E213AD259F009CF224 /* PlugInDefaults.h */,
+				FAA0F6E313AD259F009CF224 /* PlugInDefaults.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -481,6 +491,8 @@
 				FA5D262B12FF052D00ADCB6D /* CTidy.m in Sources */,
 				FA5D264A12FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m in Sources */,
 				FA4CBAE613ACDEAE009E0372 /* PlugInUpdateCheck.m in Sources */,
+				FAA0F6E113AD253D009CF224 /* BundleUserDefaults.m in Sources */,
+				FAA0F6E413AD259F009CF224 /* PlugInDefaults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

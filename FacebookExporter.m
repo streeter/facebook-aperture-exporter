@@ -130,12 +130,17 @@ static NSString *kApplicationID = @"171090106251253";
 		
 		_tableColumnWidth = 129.0;
 		
-		// Cleanup Aperture Propertylist from accessToken 
+		// Cleanup Aperture Propertylist from old values 
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults]; 
 		if ([defaults stringForKey:kUserDefaultAccessToken]) {
 			[defaults removeObjectForKey:kUserDefaultAccessToken];
-			[defaults setBool:YES forKey:kUserDefaultAuthenticated];
+			[PlugInDefaults setUserAuthenticated:YES];
 		}
+		if ([defaults boolForKey:kUserDefaultAuthenticated]) {
+			[defaults removeObjectForKey:kUserDefaultAuthenticated];
+			[PlugInDefaults setUserAuthenticated:YES];
+		}
+		[defaults synchronize];
 		
 		[self setAuthenticated:NO];
 		[self setShouldCancelUploadActivity:NO];
@@ -653,8 +658,7 @@ static NSString *kApplicationID = @"171090106251253";
 
 - (void)authenticateWithSavedData
 {
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults]; 
-	[self setAuthenticated:[defaults boolForKey:kUserDefaultAuthenticated]];
+	[self setAuthenticated:[PlugInDefaults isUserAuthenticated]];
 	
 	if (_updateNow)
 		[self cancelAuthenticationWindow];
@@ -696,8 +700,7 @@ static NSString *kApplicationID = @"171090106251253";
 {
 	[self _hideAuthenticationSheet];
 	
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	[defaults setBool:_authenticated forKey:kUserDefaultAuthenticated];
+	[PlugInDefaults setUserAuthenticated:_authenticated];
 	
 	[self getUserInformation];
 }
@@ -773,8 +776,8 @@ static NSString *kApplicationID = @"171090106251253";
 	
 	[self setAccessToken:nil];
 	[self setUsername:nil];
-	
-	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefaultAuthenticated];
+
+	[PlugInDefaults removeUserAuthenticated];
 	
 	NSHTTPCookieStorage *cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
 	NSArray *facebookCookies = [cookies cookiesForURL:[NSURL URLWithString:@"http://login.facebook.com"]];

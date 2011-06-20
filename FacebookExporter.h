@@ -14,6 +14,7 @@
 #import "FacebookPicture.h"
 #import "FacebookRequestController.h"
 #import "PlugInUpdateCheck.h"
+#import "PlugInDefaults.h"
 #import <WebKit/WebKit.h>
 #import <Sparkle/Sparkle.h>
 
