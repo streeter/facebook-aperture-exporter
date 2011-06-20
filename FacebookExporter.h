@@ -130,6 +130,7 @@
 // Preferences Actions
 #pragma mark Preferences Actions
 - (IBAction)openPreferencesWindow:(id)sender;
+- (IBAction)changeStateOpenOnFinish:(id)sender;
 
 #pragma mark -
 // Album Actions

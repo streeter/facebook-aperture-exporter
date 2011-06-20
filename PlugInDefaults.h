@@ -16,5 +16,7 @@
 + (BOOL)isUserAuthenticated;
 + (void)setUserAuthenticated:(BOOL)defaultAuthenticated;
 + (void)removeUserAuthenticated;
++ (BOOL)isOpenFacebookOnFinish;
++ (void)setOpenFacebookOnFinish:(BOOL)openOnFinish;
 
 @end

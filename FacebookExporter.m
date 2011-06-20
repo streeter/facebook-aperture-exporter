@@ -197,6 +197,8 @@ static NSString *kApplicationID = @"171090106251253";
 		[myNib release];
 	}
 	
+	[openFacebookOnFinishButton setState:[PlugInDefaults isOpenFacebookOnFinish]];
+	
 	NSString *version = [[[NSBundle bundleForClass:[self class]] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
 	NSLog(@"Plugin version: %@", version);
 	NSString *versionString = [NSString stringWithFormat:@"Facebook Exporter Version %@", version];
@@ -799,6 +801,10 @@ static NSString *kApplicationID = @"171090106251253";
 	NSLog(@"Should open preferences sheet");
 }
 
+- (IBAction)changeStateOpenOnFinish:(id)sender
+{
+	[PlugInDefaults setOpenFacebookOnFinish:[openFacebookOnFinishButton state]];
+}
 
 #pragma mark -
 // Album Actions
@@ -1088,8 +1094,13 @@ static NSString *kApplicationID = @"171090106251253";
 {
 	NSLog(@"_uploadNextImage with %d images left", [_exportedImagePaths count]);
 	
+	NSMenuItem *menuItem = [albumListView selectedItem];
+	FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
+	
 	if (!_exportedImagePaths || ([_exportedImagePaths count] == 0)) {
 		// There are no more images to upload. We're done.
+		if ([openFacebookOnFinishButton state])
+			[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[albumInfo link]]];
 		[_exportManager shouldFinishExport];
 	} else if ([self shouldCancelUploadActivity]) {
 		[_exportManager shouldCancelExport];
@@ -1115,14 +1126,11 @@ static NSString *kApplicationID = @"171090106251253";
 			return;
 		}
 		
-		NSMenuItem *menuItem = [albumListView selectedItem];
-		FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
-		
 		// Schedule the upload to start
 		[[self requestController] uploadPhoto:[albumInfo albumID]
 									imageName:[picture title]
 									imageData:imageData];
-
+		
 	}
 }
 
