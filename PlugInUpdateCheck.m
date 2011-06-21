@@ -11,7 +11,7 @@
 
 @implementation PlugInUpdateCheck
 
-+ (BOOL)isUpdateAvailable
++ (BOOL)isUpdateAvailable:(NSString **)newVersion
 {
 	NSURL *appcastURL = [NSURL URLWithString:[[[NSBundle bundleForClass:[self class]] infoDictionary] objectForKey:@"SUFeedURL"]];
 	
@@ -62,6 +62,8 @@
 	switch (verResult) {
 		case NSOrderedAscending:
 			// New Version available -> "b > a"
+			if (newVersion != nil)
+				*newVersion = latestVersion;
 			return YES;
 			break;
 		case NSOrderedDescending:

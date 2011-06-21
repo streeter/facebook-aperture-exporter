@@ -207,9 +207,10 @@ static NSString *kApplicationID = @"171090106251253";
 	NSString *pluginBundleID = [[[NSBundle bundleForClass: [self class]] infoDictionary] objectForKey:@"CFBundleIdentifier"];
 	NSLog(@"Plugin Bundle ID: %@", pluginBundleID);
 	
-	_updateNow = NO;
+	_updateNow = NO;	
+	NSString *newVersion;
 	
-	if ([PlugInUpdateCheck isUpdateAvailable]) {
+	if ([PlugInUpdateCheck isUpdateAvailable:&newVersion]) {
 		SUUpdater *updater = [SUUpdater updaterForBundle:[NSBundle bundleWithIdentifier:pluginBundleID]];
 		[updater setDelegate:self];
 		[updater setAutomaticallyChecksForUpdates:YES];
@@ -219,7 +220,7 @@ static NSString *kApplicationID = @"171090106251253";
 		NSLog(@"Plugin feed URL: %@", [updater feedURL]);
 
 		NSString *alertMessage = [self _localizedStringForKey:@"updateAvailable" defaultValue:@"A new version of Facebook Exporter is available! Would you like to update it now?"];
-		NSString *informativeText = @"";
+		NSString *informativeText = [NSString stringWithFormat:[self _localizedStringForKey:@"updateVersionInfo" defaultValue:@"Facebook Exporter %@ is now available.\nYou have %@."], newVersion, version];
 		NSAlert *alert = [NSAlert alertWithMessageText:alertMessage 
 										 defaultButton:[self _localizedStringForKey:@"updateNow" defaultValue:@"Update now"] 
 									   alternateButton:[self _localizedStringForKey:@"updateLater" defaultValue:@"Update later"] 

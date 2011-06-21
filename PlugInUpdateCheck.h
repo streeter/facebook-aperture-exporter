@@ -15,6 +15,6 @@
 
 }
 
-+ (BOOL)isUpdateAvailable;
++ (BOOL)isUpdateAvailable:(NSString **)newVersion;
 
 @end
