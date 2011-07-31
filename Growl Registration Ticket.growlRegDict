@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   Growl Registration Ticket.growlRegDict
+   FacebookExporter
+
+   Created by Alexander Brand on 30.07.11.
+   Copyright 2011 Alexander Brand. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+		<key>TicketVersion</key>
+		<integer>1</integer>
+		<key>AllNotifications</key>
+		<array>
+			<string>Export finished</string>
+			<string>Exporting images</string>
+			<string>Uploading images</string>
+		</array>
+		<key>DefaultNotifications</key>
+		<array>
+			<string>Export finished</string>
+			<string>Exporting images</string>
+			<string>Uploading images</string>
+		</array>
+    </dict>
+</plist>

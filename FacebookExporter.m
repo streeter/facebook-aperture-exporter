@@ -206,6 +206,12 @@ static NSString *kApplicationID = @"171090106251253";
 	
 	NSString *pluginBundleID = [[[NSBundle bundleForClass: [self class]] infoDictionary] objectForKey:@"CFBundleIdentifier"];
 	NSLog(@"Plugin Bundle ID: %@", pluginBundleID);
+		  
+	NSString *pathToGrowlDic = [[NSBundle bundleWithIdentifier:pluginBundleID] pathForResource:@"Growl Registration Ticket" 
+																						ofType:@"growlRegDict" ];	
+	
+	[GrowlApplicationBridge setGrowlDelegate:self];															
+	[GrowlApplicationBridge registerWithDictionary:[NSDictionary dictionaryWithContentsOfFile:pathToGrowlDic]];
 	
 	_updateNow = NO;	
 	NSString *newVersion;
@@ -519,6 +525,18 @@ static NSString *kApplicationID = @"171090106251253";
 	[exportProgress.message autorelease];
 	exportProgress.message = [[self _localizedStringForKey:@"exportingImages" defaultValue:@"Step 1 of 2: Exporting images..."] retain];
 	[self unlockProgress];
+	
+	NSMenuItem *menuItem = [albumListView selectedItem];
+	FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
+	NSString *growlMsg = [NSString stringWithFormat:@"Begin exporting %d images to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
+	
+	[GrowlApplicationBridge notifyWithTitle:@"Exporting images..."
+								description:[self _localizedStringForKey:@"growlExportingImages" defaultValue:growlMsg]
+						   notificationName:@"Exporting images"
+								   iconData:NULL
+								   priority:0
+								   isSticky:NO
+							   clickContext:NULL];
 }
 
 - (BOOL)exportManagerShouldExportImageAtIndex:(unsigned)index
@@ -596,6 +614,17 @@ static NSString *kApplicationID = @"171090106251253";
 	// simultaneous uploads. But the solution that lets Aperture write them all to disk first, and then uploads them one-by-one is 
 	// the simplest for this example.
 	
+	NSMenuItem *menuItem = [albumListView selectedItem];
+	FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
+	NSString *growlMsg = [NSString stringWithFormat:@"Begin uploading %d images to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
+	
+	[GrowlApplicationBridge notifyWithTitle:@"Uploading images..."
+								description:[self _localizedStringForKey:@"growlUploadingImages" defaultValue:growlMsg]
+						   notificationName:@"Uploading images"
+								   iconData:NULL
+								   priority:0
+								   isSticky:NO
+							   clickContext:NULL];
 	
 	[self _incrementUploadProgress:0];
 	
@@ -1044,6 +1073,14 @@ static NSString *kApplicationID = @"171090106251253";
 	return [[NSBundle mainBundle] bundlePath];
 }
 
+#pragma mark -
+// Growl Delegate Methods
+#pragma mark Growl Delegate Methods
+- (NSString *) applicationNameForGrowl
+{
+	// applicationName should not change between versions and incarnations
+	return @"Aperture FacebookExporterPlugIn";
+}
 
 #pragma mark -
 // Private Methods
@@ -1100,13 +1137,25 @@ static NSString *kApplicationID = @"171090106251253";
 	
 	if (!_exportedImagePaths || ([_exportedImagePaths count] == 0)) {
 		// There are no more images to upload. We're done.
+		NSMenuItem *menuItem = [albumListView selectedItem];
+		FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
+		NSString *growlMsg = [NSString stringWithFormat:@"%d images transferred to to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
+		
+		[GrowlApplicationBridge notifyWithTitle:@"Uploading finished..."
+									description:[self _localizedStringForKey:@"growlUploadingFinished" defaultValue:growlMsg]
+							   notificationName:@"Export finished"
+									   iconData:NULL
+									   priority:0
+									   isSticky:NO
+								   clickContext:NULL];
 		if ([openFacebookOnFinishButton state])
 			[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[albumInfo link]]];
 		[_exportManager shouldFinishExport];
+		
 	} else if ([self shouldCancelUploadActivity]) {
 		[_exportManager shouldCancelExport];
+
 	} else {
-		
 		// Read in our image data
 		FacebookPicture *picture = [_exportedImagePaths objectAtIndex:0];
 		NSString *nextImagePath = [picture path];

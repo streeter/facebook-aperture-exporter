@@ -17,9 +17,10 @@
 #import "PlugInDefaults.h"
 #import <WebKit/WebKit.h>
 #import <Sparkle/Sparkle.h>
+#import <Growl/GrowlApplicationBridge.h>
 
 
-@interface FacebookExporter : NSObject <ApertureExportPlugIn>
+@interface FacebookExporter : NSObject <ApertureExportPlugIn, GrowlApplicationBridgeDelegate>
 {
 	// The cached API Manager object, as passed to the -initWithAPIManager: method.
 	id _apiManager; 
@@ -179,6 +180,11 @@
 - (void)updater:(SUUpdater *)updater didFindValidUpdate:(SUAppcastItem *)update;
 - (void)updaterDidNotFindUpdate:(SUUpdater *)update;
 - (NSString *)pathToRelaunchForUpdater:(SUUpdater *)updater;
+
+#pragma mark -
+// Growl Delegate Methods
+#pragma mark Growl Delegate Methods
+- (NSString *) applicationNameForGrowl;
 
 #pragma mark -
 // Private Methods
