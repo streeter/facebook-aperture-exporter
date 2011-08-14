@@ -1154,7 +1154,7 @@ static NSString *kApplicationID = @"171090106251253";
 		// There are no more images to upload. We're done.
 		NSMenuItem *menuItem = [albumListView selectedItem];
 		FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
-		NSString *growlMsg = [NSString stringWithFormat:@"%d images transferred to to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
+		NSString *growlMsg = [NSString stringWithFormat:@"%d images transferred to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
 		
 		[GrowlApplicationBridge notifyWithTitle:@"Uploading finished..."
 									description:[self _localizedStringForKey:@"growlUploadingFinished" defaultValue:growlMsg]
