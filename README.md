@@ -9,21 +9,20 @@ This is a simple exporter plugin for <a href="http://www.apple.com/aperture/">Ap
 * High resolution photo uploads to Facebook
   * Enabled by uploading large versions to Facebook (choose an export preset that will create 2048 pixels along the largest side)
 * Sparkle updating
+* Growl notifications
 
 ## Known Limitations and Issues
 * The preferences button does nothing. Eventually it will show the preferences window.
 * The export progress information in the Activity panel is pretty much broken. At least you know it is still exporting.
 * The caption for a created Facebook album is not set. Still figuring out why that is the case.
-* The open album when upload is complete checkbox does not work
-* The Sparkle update framework only runs when the plugin is closed.
-* The Sparkle framework doesn't reopen Aperture after updating the plugin. This
-means you need to open Aperture manually.
+* <del>The open album when upload is complete checkbox does not work</del>
+* <del>The Sparkle update framework only runs when the plugin is closed.</del>
+* <del>The Sparkle framework doesn't reopen Aperture after updating the plugin. This
+means you need to open Aperture manually.</del>
 
 ## Nice Features to Have
-* Growl notifications
 * Choose whether to use the Title or Description from each photo to use as the photo's caption on Facebook (currently uses the title).
 * Add a tag to all uploaded photos
-* [Added] Sparkle automatic updates
 
 ## Usage and Installation
 1. Download the <a href="https://github.com/streeter/facebook-aperture-exporter/downloads">plugin from github</a>.

@@ -42,9 +42,29 @@
 		D99F13971287FF5500A48041 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D99F13901287FF5500A48041 /* SBJsonParser.m */; };
 		D99F13981287FF5500A48041 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D99F13921287FF5500A48041 /* SBJsonWriter.m */; };
 		D9FF61FA128B8F3D0012A792 /* FacebookAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF61F9128B8F3D0012A792 /* FacebookAlbum.m */; };
+		FA31318013E4B39E00470875 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA31317F13E4B39E00470875 /* Growl.framework */; };
+		FA31318D13E4B3AC00470875 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA31317F13E4B39E00470875 /* Growl.framework */; };
+		FA3131C513E4C1D100470875 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = FA60B7EA13C304EA00D9B215 /* Growl Registration Ticket.growlRegDict */; };
 		FA39DCC712E426440058685C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA39DCC612E426440058685C /* Sparkle.framework */; };
 		FA39DD7612E426650058685C /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA39DCC612E426440058685C /* Sparkle.framework */; };
 		FA39DDDC12E439BB0058685C /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = FA39DDDB12E439BB0058685C /* dsa_pub.pem */; };
+		FA4CBAE613ACDEAE009E0372 /* PlugInUpdateCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4CBAE513ACDEAE009E0372 /* PlugInUpdateCheck.m */; };
+		FA5D261F12FF052D00ADCB6D /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D260412FF052D00ADCB6D /* CXMLDocument_CreationExtensions.m */; };
+		FA5D262012FF052D00ADCB6D /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D260612FF052D00ADCB6D /* CXMLNode_CreationExtensions.m */; };
+		FA5D262112FF052D00ADCB6D /* CXHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D260812FF052D00ADCB6D /* CXHTMLDocument.m */; };
+		FA5D262212FF052D00ADCB6D /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D260A12FF052D00ADCB6D /* CXMLDocument.m */; };
+		FA5D262312FF052D00ADCB6D /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D260C12FF052D00ADCB6D /* CXMLDocument_PrivateExtensions.m */; };
+		FA5D262412FF052D00ADCB6D /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D260E12FF052D00ADCB6D /* CXMLElement.m */; };
+		FA5D262512FF052D00ADCB6D /* CXMLElement_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D261012FF052D00ADCB6D /* CXMLElement_CreationExtensions.m */; };
+		FA5D262612FF052D00ADCB6D /* CXMLElement_ElementTreeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D261212FF052D00ADCB6D /* CXMLElement_ElementTreeExtensions.m */; };
+		FA5D262712FF052D00ADCB6D /* CXMLNamespaceNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D261412FF052D00ADCB6D /* CXMLNamespaceNode.m */; };
+		FA5D262812FF052D00ADCB6D /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D261612FF052D00ADCB6D /* CXMLNode.m */; };
+		FA5D262912FF052D00ADCB6D /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D261812FF052D00ADCB6D /* CXMLNode_PrivateExtensions.m */; };
+		FA5D262A12FF052D00ADCB6D /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D261A12FF052D00ADCB6D /* CXMLNode_XPathExtensions.m */; };
+		FA5D262B12FF052D00ADCB6D /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D261D12FF052D00ADCB6D /* CTidy.m */; };
+		FA5D264A12FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D264912FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m */; };
+		FAA0F6E113AD253D009CF224 /* BundleUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F6E013AD253D009CF224 /* BundleUserDefaults.m */; };
+		FAA0F6E413AD259F009CF224 /* PlugInDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F6E313AD259F009CF224 /* PlugInDefaults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +84,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				FA31318D13E4B3AC00470875 /* Growl.framework in CopyFiles */,
 				FA39DD7612E426650058685C /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,8 +135,45 @@
 		D99F13921287FF5500A48041 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		D9FF61F8128B8F3D0012A792 /* FacebookAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookAlbum.h; sourceTree = "<group>"; };
 		D9FF61F9128B8F3D0012A792 /* FacebookAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookAlbum.m; sourceTree = "<group>"; };
+		FA31317F13E4B39E00470875 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		FA39DCC612E426440058685C /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		FA39DDDB12E439BB0058685C /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		FA4CBAE413ACDEAE009E0372 /* PlugInUpdateCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlugInUpdateCheck.h; sourceTree = "<group>"; };
+		FA4CBAE513ACDEAE009E0372 /* PlugInUpdateCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlugInUpdateCheck.m; sourceTree = "<group>"; };
+		FA5D260312FF052D00ADCB6D /* CXMLDocument_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_CreationExtensions.h; sourceTree = "<group>"; };
+		FA5D260412FF052D00ADCB6D /* CXMLDocument_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_CreationExtensions.m; sourceTree = "<group>"; };
+		FA5D260512FF052D00ADCB6D /* CXMLNode_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_CreationExtensions.h; sourceTree = "<group>"; };
+		FA5D260612FF052D00ADCB6D /* CXMLNode_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_CreationExtensions.m; sourceTree = "<group>"; };
+		FA5D260712FF052D00ADCB6D /* CXHTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHTMLDocument.h; sourceTree = "<group>"; };
+		FA5D260812FF052D00ADCB6D /* CXHTMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXHTMLDocument.m; sourceTree = "<group>"; };
+		FA5D260912FF052D00ADCB6D /* CXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument.h; sourceTree = "<group>"; };
+		FA5D260A12FF052D00ADCB6D /* CXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument.m; sourceTree = "<group>"; };
+		FA5D260B12FF052D00ADCB6D /* CXMLDocument_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_PrivateExtensions.h; sourceTree = "<group>"; };
+		FA5D260C12FF052D00ADCB6D /* CXMLDocument_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_PrivateExtensions.m; sourceTree = "<group>"; };
+		FA5D260D12FF052D00ADCB6D /* CXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement.h; sourceTree = "<group>"; };
+		FA5D260E12FF052D00ADCB6D /* CXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement.m; sourceTree = "<group>"; };
+		FA5D260F12FF052D00ADCB6D /* CXMLElement_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_CreationExtensions.h; sourceTree = "<group>"; };
+		FA5D261012FF052D00ADCB6D /* CXMLElement_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_CreationExtensions.m; sourceTree = "<group>"; };
+		FA5D261112FF052D00ADCB6D /* CXMLElement_ElementTreeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_ElementTreeExtensions.h; sourceTree = "<group>"; };
+		FA5D261212FF052D00ADCB6D /* CXMLElement_ElementTreeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_ElementTreeExtensions.m; sourceTree = "<group>"; };
+		FA5D261312FF052D00ADCB6D /* CXMLNamespaceNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNamespaceNode.h; sourceTree = "<group>"; };
+		FA5D261412FF052D00ADCB6D /* CXMLNamespaceNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNamespaceNode.m; sourceTree = "<group>"; };
+		FA5D261512FF052D00ADCB6D /* CXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode.h; sourceTree = "<group>"; };
+		FA5D261612FF052D00ADCB6D /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode.m; sourceTree = "<group>"; };
+		FA5D261712FF052D00ADCB6D /* CXMLNode_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_PrivateExtensions.h; sourceTree = "<group>"; };
+		FA5D261812FF052D00ADCB6D /* CXMLNode_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_PrivateExtensions.m; sourceTree = "<group>"; };
+		FA5D261912FF052D00ADCB6D /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
+		FA5D261A12FF052D00ADCB6D /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
+		FA5D261C12FF052D00ADCB6D /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
+		FA5D261D12FF052D00ADCB6D /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
+		FA5D261E12FF052D00ADCB6D /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
+		FA5D264812FF064F00ADCB6D /* PlugInSUStandardVersionComparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlugInSUStandardVersionComparator.h; sourceTree = "<group>"; };
+		FA5D264912FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlugInSUStandardVersionComparator.m; sourceTree = "<group>"; };
+		FA60B7EA13C304EA00D9B215 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		FAA0F6DF13AD253D009CF224 /* BundleUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BundleUserDefaults.h; sourceTree = "<group>"; };
+		FAA0F6E013AD253D009CF224 /* BundleUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BundleUserDefaults.m; sourceTree = "<group>"; };
+		FAA0F6E213AD259F009CF224 /* PlugInDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlugInDefaults.h; sourceTree = "<group>"; };
+		FAA0F6E313AD259F009CF224 /* PlugInDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlugInDefaults.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +185,7 @@
 				D15DEA4A0ABF639500CBE3A5 /* PluginManager.framework in Frameworks */,
 				D99F121D1287EC4300A48041 /* WebKit.framework in Frameworks */,
 				FA39DCC712E426440058685C /* Sparkle.framework in Frameworks */,
+				FA31318013E4B39E00470875 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +225,7 @@
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				D118EA640AC08CCB006DD2FE /* Localizable.strings */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+				FA60B7EA13C304EA00D9B215 /* Growl Registration Ticket.growlRegDict */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -173,6 +233,10 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FAA0F6DF13AD253D009CF224 /* BundleUserDefaults.h */,
+				FAA0F6E013AD253D009CF224 /* BundleUserDefaults.m */,
+				FA5D264812FF064F00ADCB6D /* PlugInSUStandardVersionComparator.h */,
+				FA5D264912FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m */,
 				D15DEA4E0ABF63C600CBE3A5 /* FacebookExporter.h */,
 				D15DEA4D0ABF63C600CBE3A5 /* FacebookExporter.m */,
 				D99F11231287643200A48041 /* FacebookPicture.h */,
@@ -183,6 +247,10 @@
 				D9FF61F9128B8F3D0012A792 /* FacebookAlbum.m */,
 				D957ED001292FC6900418F32 /* FacebookRequestController.h */,
 				D957ED011292FC6900418F32 /* FacebookRequestController.m */,
+				FA4CBAE413ACDEAE009E0372 /* PlugInUpdateCheck.h */,
+				FA4CBAE513ACDEAE009E0372 /* PlugInUpdateCheck.m */,
+				FAA0F6E213AD259F009CF224 /* PlugInDefaults.h */,
+				FAA0F6E313AD259F009CF224 /* PlugInDefaults.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -190,6 +258,7 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA31317F13E4B39E00470875 /* Growl.framework */,
 				FA39DCC612E426440058685C /* Sparkle.framework */,
 				D15DEA490ABF639500CBE3A5 /* PluginManager.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
@@ -221,6 +290,7 @@
 		32C88E010371C26100C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FA5D260112FF052D00ADCB6D /* TouchXML */,
 				D99F13851287FF5500A48041 /* JSON */,
 				32DBCF630370AF2F00C91783 /* FacebookExporter_Prefix.pch */,
 			);
@@ -265,6 +335,56 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		FA5D260112FF052D00ADCB6D /* TouchXML */ = {
+			isa = PBXGroup;
+			children = (
+				FA5D260212FF052D00ADCB6D /* Creation */,
+				FA5D260712FF052D00ADCB6D /* CXHTMLDocument.h */,
+				FA5D260812FF052D00ADCB6D /* CXHTMLDocument.m */,
+				FA5D260912FF052D00ADCB6D /* CXMLDocument.h */,
+				FA5D260A12FF052D00ADCB6D /* CXMLDocument.m */,
+				FA5D260B12FF052D00ADCB6D /* CXMLDocument_PrivateExtensions.h */,
+				FA5D260C12FF052D00ADCB6D /* CXMLDocument_PrivateExtensions.m */,
+				FA5D260D12FF052D00ADCB6D /* CXMLElement.h */,
+				FA5D260E12FF052D00ADCB6D /* CXMLElement.m */,
+				FA5D260F12FF052D00ADCB6D /* CXMLElement_CreationExtensions.h */,
+				FA5D261012FF052D00ADCB6D /* CXMLElement_CreationExtensions.m */,
+				FA5D261112FF052D00ADCB6D /* CXMLElement_ElementTreeExtensions.h */,
+				FA5D261212FF052D00ADCB6D /* CXMLElement_ElementTreeExtensions.m */,
+				FA5D261312FF052D00ADCB6D /* CXMLNamespaceNode.h */,
+				FA5D261412FF052D00ADCB6D /* CXMLNamespaceNode.m */,
+				FA5D261512FF052D00ADCB6D /* CXMLNode.h */,
+				FA5D261612FF052D00ADCB6D /* CXMLNode.m */,
+				FA5D261712FF052D00ADCB6D /* CXMLNode_PrivateExtensions.h */,
+				FA5D261812FF052D00ADCB6D /* CXMLNode_PrivateExtensions.m */,
+				FA5D261912FF052D00ADCB6D /* CXMLNode_XPathExtensions.h */,
+				FA5D261A12FF052D00ADCB6D /* CXMLNode_XPathExtensions.m */,
+				FA5D261B12FF052D00ADCB6D /* Tidy */,
+				FA5D261E12FF052D00ADCB6D /* TouchXML.h */,
+			);
+			path = TouchXML;
+			sourceTree = "<group>";
+		};
+		FA5D260212FF052D00ADCB6D /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				FA5D260312FF052D00ADCB6D /* CXMLDocument_CreationExtensions.h */,
+				FA5D260412FF052D00ADCB6D /* CXMLDocument_CreationExtensions.m */,
+				FA5D260512FF052D00ADCB6D /* CXMLNode_CreationExtensions.h */,
+				FA5D260612FF052D00ADCB6D /* CXMLNode_CreationExtensions.m */,
+			);
+			path = Creation;
+			sourceTree = "<group>";
+		};
+		FA5D261B12FF052D00ADCB6D /* Tidy */ = {
+			isa = PBXGroup;
+			children = (
+				FA5D261C12FF052D00ADCB6D /* CTidy.h */,
+				FA5D261D12FF052D00ADCB6D /* CTidy.m */,
+			);
+			path = Tidy;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,6 +396,7 @@
 				8D5B49B1048680CD000E48DA /* Sources */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
 				FA39DD7C12E426800058685C /* CopyFiles */,
+				FA31319A13E4BC5600470875 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -321,6 +442,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3131C513E4C1D100470875 /* Growl Registration Ticket.growlRegDict in Resources */,
 				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
 				D15DEA520ABF641300CBE3A5 /* FacebookExporter.nib in Resources */,
 				D118EA660AC08CCB006DD2FE /* Localizable.strings in Resources */,
@@ -347,6 +469,19 @@
 			shellPath = /bin/bash;
 			shellScript = "set -o errexit\n\n[ $BUILD_STYLE = Release ] || { echo Distribution target requires \"'Release'\" build style; false; }\n\nVERSION=$(defaults read \"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.ApertureExport/Contents/Info\" CFBundleVersion)\nDOWNLOAD_BASE_URL=\"https://github.com/downloads/streeter/facebook-aperture-exporter\"\nRELEASENOTES_URL=\"https://github.com/streeter/facebook-aperture-exporter/raw/master/release_notes.md\"\n\nARCHIVE_FILENAME=\"$PROJECT_NAME.$VERSION.ApertureExport.zip\"\nDOWNLOAD_URL=\"$DOWNLOAD_BASE_URL/$ARCHIVE_FILENAME\"\nKEYCHAIN_PRIVKEY_NAME=\"Sparkle Private Key 1\"\n\nWD=$PWD\ncd \"$BUILT_PRODUCTS_DIR\"\nrm -f \"$PROJECT_NAME\"*.zip\nditto -ck --keepParent \"$PROJECT_NAME.ApertureExport\" \"$ARCHIVE_FILENAME\"\n\nSIZE=$(stat -f %z \"$ARCHIVE_FILENAME\")\nPUBDATE=$(LC_TIME=en_US date +\"%a, %d %b %G %T %z\")\nSIGNATURE=$(\n\topenssl dgst -sha1 -binary < \"$ARCHIVE_FILENAME\" \\\n\t| openssl dgst -dss1 -sign <(security find-generic-password -g -s \"$KEYCHAIN_PRIVKEY_NAME\" 2>&1 1>/dev/null | perl -pe '($_) = /\"(.+)\"/; s/\\\\012/\\n/g' | perl -MXML::LibXML -e 'print XML::LibXML->new()->parse_file(\"-\")->findvalue(q(//string[preceding-sibling::key[1] = \"NOTE\"]))') \\\n\t| openssl enc -base64\n)\n\n[ $SIGNATURE ] || { echo Unable to load signing private key with name \"'$KEYCHAIN_PRIVKEY_NAME'\" from keychain; false; }\n\ncat <<EOF\n\t\t<item>\n\t\t\t<title>Version $VERSION</title>\n\t\t\t<sparkle:releaseNotesLink>$RELEASENOTES_URL</sparkle:releaseNotesLink>\n\t\t\t<pubDate>$PUBDATE</pubDate>\n\t\t\t<enclosure\n\t\t\t\turl=\"$DOWNLOAD_URL\"\n\t\t\t\tsparkle:version=\"$VERSION\"\n\t\t\t\ttype=\"application/octet-stream\"\n\t\t\t\tlength=\"$SIZE\"\n\t\t\t\tsparkle:dsaSignature=\"$SIGNATURE\"\n\t\t\t/>\n\t\t</item>\nEOF";
 		};
+		FA31319A13E4BC5600470875 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "install_name_tool -change \\\n \"@executable_path/../Frameworks/Growl.framework/Versions/A/Growl\" \\\n \"@loader_path/../Frameworks/Growl.framework/Versions/A/Growl\" \\\n \"$INSTALL_PATH/$EXECUTABLE_PATH\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -365,6 +500,23 @@
 				D99F13981287FF5500A48041 /* SBJsonWriter.m in Sources */,
 				D9FF61FA128B8F3D0012A792 /* FacebookAlbum.m in Sources */,
 				D957ED021292FC6900418F32 /* FacebookRequestController.m in Sources */,
+				FA5D261F12FF052D00ADCB6D /* CXMLDocument_CreationExtensions.m in Sources */,
+				FA5D262012FF052D00ADCB6D /* CXMLNode_CreationExtensions.m in Sources */,
+				FA5D262112FF052D00ADCB6D /* CXHTMLDocument.m in Sources */,
+				FA5D262212FF052D00ADCB6D /* CXMLDocument.m in Sources */,
+				FA5D262312FF052D00ADCB6D /* CXMLDocument_PrivateExtensions.m in Sources */,
+				FA5D262412FF052D00ADCB6D /* CXMLElement.m in Sources */,
+				FA5D262512FF052D00ADCB6D /* CXMLElement_CreationExtensions.m in Sources */,
+				FA5D262612FF052D00ADCB6D /* CXMLElement_ElementTreeExtensions.m in Sources */,
+				FA5D262712FF052D00ADCB6D /* CXMLNamespaceNode.m in Sources */,
+				FA5D262812FF052D00ADCB6D /* CXMLNode.m in Sources */,
+				FA5D262912FF052D00ADCB6D /* CXMLNode_PrivateExtensions.m in Sources */,
+				FA5D262A12FF052D00ADCB6D /* CXMLNode_XPathExtensions.m in Sources */,
+				FA5D262B12FF052D00ADCB6D /* CTidy.m in Sources */,
+				FA5D264A12FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m in Sources */,
+				FA4CBAE613ACDEAE009E0372 /* PlugInUpdateCheck.m in Sources */,
+				FAA0F6E113AD253D009CF224 /* BundleUserDefaults.m in Sources */,
+				FAA0F6E413AD259F009CF224 /* PlugInDefaults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +624,8 @@
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -495,7 +649,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
 				STRIP_INSTALLED_PRODUCT = NO;

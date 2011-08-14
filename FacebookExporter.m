@@ -56,6 +56,7 @@ static NSString *kUserDefaultAuthenticated = @"ApertureFacebookPluginDefaultAuth
 
 static NSString *kOAuthURL = @"https://graph.facebook.com/oauth/authorize";
 static NSString *kRedirectURL = @"http://www.facebook.com/connect/login_success.html";
+static NSString *kSecRedirectURL = @"https://www.facebook.com/connect/login_success.html";
 
 static NSString *kSDKVersion = @"ios";
 static NSString *kFBAccessToken = @"access_token=";
@@ -130,12 +131,17 @@ static NSString *kApplicationID = @"171090106251253";
 		
 		_tableColumnWidth = 129.0;
 		
-		// Cleanup Aperture Propertylist from accessToken 
+		// Cleanup Aperture Propertylist from old values 
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults]; 
 		if ([defaults stringForKey:kUserDefaultAccessToken]) {
 			[defaults removeObjectForKey:kUserDefaultAccessToken];
-			[defaults setBool:YES forKey:kUserDefaultAuthenticated];
+			[PlugInDefaults setUserAuthenticated:YES];
 		}
+		if ([defaults boolForKey:kUserDefaultAuthenticated]) {
+			[defaults removeObjectForKey:kUserDefaultAuthenticated];
+			[PlugInDefaults setUserAuthenticated:YES];
+		}
+		[defaults synchronize];
 		
 		[self setAuthenticated:NO];
 		[self setShouldCancelUploadActivity:NO];
@@ -192,6 +198,8 @@ static NSString *kApplicationID = @"171090106251253";
 		[myNib release];
 	}
 	
+	[openFacebookOnFinishButton setState:[PlugInDefaults isOpenFacebookOnFinish]];
+	
 	NSString *version = [[[NSBundle bundleForClass:[self class]] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
 	NSLog(@"Plugin version: %@", version);
 	NSString *versionString = [NSString stringWithFormat:@"Facebook Exporter Version %@", version];
@@ -199,15 +207,36 @@ static NSString *kApplicationID = @"171090106251253";
 	
 	NSString *pluginBundleID = [[[NSBundle bundleForClass: [self class]] infoDictionary] objectForKey:@"CFBundleIdentifier"];
 	NSLog(@"Plugin Bundle ID: %@", pluginBundleID);
-	SUUpdater *updater = [SUUpdater updaterForBundle:[NSBundle bundleWithIdentifier:pluginBundleID]];
+		  
+	NSString *pathToGrowlDic = [[NSBundle bundleWithIdentifier:pluginBundleID] pathForResource:@"Growl Registration Ticket" 
+																						ofType:@"growlRegDict" ];	
 	
-	[updater setDelegate:self];
+	[GrowlApplicationBridge setGrowlDelegate:self];															
+	[GrowlApplicationBridge registerWithDictionary:[NSDictionary dictionaryWithContentsOfFile:pathToGrowlDic]];
 	
-	NSLog(@"Plugin feed URL: %@", [updater feedURL]);
+	_updateNow = NO;	
+	NSString *newVersion;
 	
-	[updater setAutomaticallyChecksForUpdates:YES];
-	[updater resetUpdateCycle];
-	[updater checkForUpdatesInBackground];
+	if ([PlugInUpdateCheck isUpdateAvailable:&newVersion]) {
+		SUUpdater *updater = [SUUpdater updaterForBundle:[NSBundle bundleWithIdentifier:pluginBundleID]];
+		[updater setDelegate:self];
+		[updater setAutomaticallyChecksForUpdates:YES];
+		[updater resetUpdateCycle];
+		[updater checkForUpdatesInBackground];
+
+		NSLog(@"Plugin feed URL: %@", [updater feedURL]);
+
+		NSString *alertMessage = [self _localizedStringForKey:@"updateAvailable" defaultValue:@"A new version of Facebook Exporter is available! Would you like to update it now?"];
+		NSString *informativeText = [NSString stringWithFormat:[self _localizedStringForKey:@"updateVersionInfo" defaultValue:@"Facebook Exporter %@ is now available.\nYou have %@."], newVersion, version];
+		NSAlert *alert = [NSAlert alertWithMessageText:alertMessage 
+										 defaultButton:[self _localizedStringForKey:@"updateNow" defaultValue:@"Update now"] 
+									   alternateButton:[self _localizedStringForKey:@"updateLater" defaultValue:@"Update later"] 
+										   otherButton:nil 
+							 informativeTextWithFormat:informativeText];
+		[alert setAlertStyle:NSInformationalAlertStyle];
+		
+		_updateNow = ([alert runModal] == NSAlertDefaultReturn);
+	}
 	
 	return settingsView;
 }
@@ -356,7 +385,14 @@ static NSString *kApplicationID = @"171090106251253";
 {
 	NSString *url = [sender mainFrameURL];
 	
-	NSComparisonResult res = [url compare:kRedirectURL options:NSCaseInsensitiveSearch range:NSMakeRange(0, [kRedirectURL length])];
+	NSString *fbRedirectURL;
+	NSComparisonResult resHTTPS = [url compare:@"https" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [@"https" length])];
+	if (resHTTPS == NSOrderedSame)
+		fbRedirectURL = kSecRedirectURL;
+	else
+		fbRedirectURL = kRedirectURL;
+
+	NSComparisonResult res = [url compare:fbRedirectURL options:NSCaseInsensitiveSearch range:NSMakeRange(0, [fbRedirectURL length])];
     if (res == NSOrderedSame)
     {
         NSString *accessToken = [self extractParameter:kFBAccessToken fromURL:url];
@@ -497,6 +533,18 @@ static NSString *kApplicationID = @"171090106251253";
 	[exportProgress.message autorelease];
 	exportProgress.message = [[self _localizedStringForKey:@"exportingImages" defaultValue:@"Step 1 of 2: Exporting images..."] retain];
 	[self unlockProgress];
+	
+	NSMenuItem *menuItem = [albumListView selectedItem];
+	FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
+	NSString *growlMsg = [NSString stringWithFormat:@"Begin exporting %d images to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
+	
+	[GrowlApplicationBridge notifyWithTitle:@"Exporting images..."
+								description:[self _localizedStringForKey:@"growlExportingImages" defaultValue:growlMsg]
+						   notificationName:@"Exporting images"
+								   iconData:NULL
+								   priority:0
+								   isSticky:NO
+							   clickContext:NULL];
 }
 
 - (BOOL)exportManagerShouldExportImageAtIndex:(unsigned)index
@@ -574,6 +622,17 @@ static NSString *kApplicationID = @"171090106251253";
 	// simultaneous uploads. But the solution that lets Aperture write them all to disk first, and then uploads them one-by-one is 
 	// the simplest for this example.
 	
+	NSMenuItem *menuItem = [albumListView selectedItem];
+	FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
+	NSString *growlMsg = [NSString stringWithFormat:@"Begin uploading %d images to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
+	
+	[GrowlApplicationBridge notifyWithTitle:@"Uploading images..."
+								description:[self _localizedStringForKey:@"growlUploadingImages" defaultValue:growlMsg]
+						   notificationName:@"Uploading images"
+								   iconData:NULL
+								   priority:0
+								   isSticky:NO
+							   clickContext:NULL];
 	
 	[self _incrementUploadProgress:0];
 	
@@ -639,10 +698,12 @@ static NSString *kApplicationID = @"171090106251253";
 
 - (void)authenticateWithSavedData
 {
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults]; 
-	[self setAuthenticated:[defaults boolForKey:kUserDefaultAuthenticated]];
+	[self setAuthenticated:[PlugInDefaults isUserAuthenticated]];
 	
-	[self _authenticate];
+	if (_updateNow)
+		[self cancelAuthenticationWindow];
+	else
+		[self _authenticate];
 }
 
 - (void)_authenticate
@@ -679,8 +740,7 @@ static NSString *kApplicationID = @"171090106251253";
 {
 	[self _hideAuthenticationSheet];
 	
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	[defaults setBool:_authenticated forKey:kUserDefaultAuthenticated];
+	[PlugInDefaults setUserAuthenticated:_authenticated];
 	
 	[self getUserInformation];
 }
@@ -756,16 +816,19 @@ static NSString *kApplicationID = @"171090106251253";
 	
 	[self setAccessToken:nil];
 	[self setUsername:nil];
-	
-	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefaultAuthenticated];
+
+	[PlugInDefaults removeUserAuthenticated];
 	
 	NSHTTPCookieStorage *cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-	NSArray *facebookCookies = [cookies cookiesForURL:[NSURL URLWithString:@"http://login.facebook.com"]];
+	NSMutableArray *facebookCookies = [NSMutableArray arrayWithCapacity:0];
+
+	[facebookCookies addObjectsFromArray:[cookies cookiesForURL:[NSURL URLWithString:@"http://login.facebook.com"]]];
+	[facebookCookies addObjectsFromArray:[cookies cookiesForURL:[NSURL URLWithString:@"https://login.facebook.com"]]];
 	
 	for (NSHTTPCookie *cookie in facebookCookies) {
 		[cookies deleteCookie:cookie];
 	}
-	
+
 	[self _authenticate];
 }
 
@@ -779,6 +842,10 @@ static NSString *kApplicationID = @"171090106251253";
 	NSLog(@"Should open preferences sheet");
 }
 
+- (IBAction)changeStateOpenOnFinish:(id)sender
+{
+	[PlugInDefaults setOpenFacebookOnFinish:[openFacebookOnFinishButton state]];
+}
 
 #pragma mark -
 // Album Actions
@@ -1011,6 +1078,20 @@ static NSString *kApplicationID = @"171090106251253";
 	NSLog(@"updaterDidNotFindUpdate");
 }
 
+- (NSString *)pathToRelaunchForUpdater:(SUUpdater *)update
+{
+	NSLog(@"pathToRelaunchForUpdater:  %@", [[NSBundle mainBundle] bundlePath]);
+	return [[NSBundle mainBundle] bundlePath];
+}
+
+#pragma mark -
+// Growl Delegate Methods
+#pragma mark Growl Delegate Methods
+- (NSString *) applicationNameForGrowl
+{
+	// applicationName should not change between versions and incarnations
+	return @"Aperture FacebookExporterPlugIn";
+}
 
 #pragma mark -
 // Private Methods
@@ -1062,13 +1143,30 @@ static NSString *kApplicationID = @"171090106251253";
 {
 	NSLog(@"_uploadNextImage with %d images left", [_exportedImagePaths count]);
 	
+	NSMenuItem *menuItem = [albumListView selectedItem];
+	FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
+	
 	if (!_exportedImagePaths || ([_exportedImagePaths count] == 0)) {
 		// There are no more images to upload. We're done.
+		NSMenuItem *menuItem = [albumListView selectedItem];
+		FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
+		NSString *growlMsg = [NSString stringWithFormat:@"%d images transferred to to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
+		
+		[GrowlApplicationBridge notifyWithTitle:@"Uploading finished..."
+									description:[self _localizedStringForKey:@"growlUploadingFinished" defaultValue:growlMsg]
+							   notificationName:@"Export finished"
+									   iconData:NULL
+									   priority:0
+									   isSticky:NO
+								   clickContext:NULL];
+		if ([openFacebookOnFinishButton state])
+			[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[albumInfo link]]];
 		[_exportManager shouldFinishExport];
+		
 	} else if ([self shouldCancelUploadActivity]) {
 		[_exportManager shouldCancelExport];
+
 	} else {
-		
 		// Read in our image data
 		FacebookPicture *picture = [_exportedImagePaths objectAtIndex:0];
 		NSString *nextImagePath = [picture path];
@@ -1089,14 +1187,11 @@ static NSString *kApplicationID = @"171090106251253";
 			return;
 		}
 		
-		NSMenuItem *menuItem = [albumListView selectedItem];
-		FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
-		
 		// Schedule the upload to start
 		[[self requestController] uploadPhoto:[albumInfo albumID]
 									imageName:[picture title]
 									imageData:imageData];
-
+		
 	}
 }
 

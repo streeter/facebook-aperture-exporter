@@ -13,11 +13,14 @@
 #import "FacebookAlbum.h"
 #import "FacebookPicture.h"
 #import "FacebookRequestController.h"
+#import "PlugInUpdateCheck.h"
+#import "PlugInDefaults.h"
 #import <WebKit/WebKit.h>
 #import <Sparkle/Sparkle.h>
+#import <Growl/GrowlApplicationBridge.h>
 
 
-@interface FacebookExporter : NSObject <ApertureExportPlugIn>
+@interface FacebookExporter : NSObject <ApertureExportPlugIn, GrowlApplicationBridgeDelegate>
 {
 	// The cached API Manager object, as passed to the -initWithAPIManager: method.
 	id _apiManager; 
@@ -97,6 +100,8 @@
 	BOOL _authenticated;
 	BOOL _shouldCancelUploadActivity;
 	
+	BOOL _updateNow;
+	
 	FacebookRequestController *_requestController;
 }
 
@@ -126,6 +131,7 @@
 // Preferences Actions
 #pragma mark Preferences Actions
 - (IBAction)openPreferencesWindow:(id)sender;
+- (IBAction)changeStateOpenOnFinish:(id)sender;
 
 #pragma mark -
 // Album Actions
@@ -173,6 +179,12 @@
 - (void)updater:(SUUpdater *)updater didFinishLoadingAppcast:(SUAppcast *)appcast;
 - (void)updater:(SUUpdater *)updater didFindValidUpdate:(SUAppcastItem *)update;
 - (void)updaterDidNotFindUpdate:(SUUpdater *)update;
+- (NSString *)pathToRelaunchForUpdater:(SUUpdater *)updater;
+
+#pragma mark -
+// Growl Delegate Methods
+#pragma mark Growl Delegate Methods
+- (NSString *) applicationNameForGrowl;
 
 #pragma mark -
 // Private Methods
