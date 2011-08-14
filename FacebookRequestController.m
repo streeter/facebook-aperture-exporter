@@ -305,14 +305,14 @@ static NSString *kRestApiURL = @"https://api.facebook.com/method/";
 		}
 		
 		if ([[request httpMethod] compare:@"GET"] == NSOrderedSame) {
-			NSMutableArray *albumList = [[NSMutableArray alloc] init];
+			NSMutableArray *albumList = [[[NSMutableArray alloc] init] autorelease];
 			
 			// Get the list of albums
 			NSArray *albums = (NSArray *)[(NSDictionary *)result objectForKey:@"data"];
 			
 			for (NSInteger i = 0; i < [albums count]; i++) {
 				NSDictionary *album = (NSDictionary *)[albums objectAtIndex:i];
-				FacebookAlbum *albumInfo = [[FacebookAlbum alloc] init];
+				FacebookAlbum *albumInfo = [[[FacebookAlbum alloc] init] autorelease];
 				
 				[albumInfo setAlbumName:[album objectForKey:@"name"]];
 				[albumInfo setAlbumID:[album objectForKey:@"id"]];

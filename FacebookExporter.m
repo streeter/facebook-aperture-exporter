@@ -1124,8 +1124,6 @@ static NSString *kApplicationID = @"171090106251253";
 		
 		[self _incrementUploadProgress:[[picture data] length]];
 		
-		[picture release];
-		
 		// Upload the next file
 		[self _uploadNextImage];
 	}
@@ -1177,7 +1175,7 @@ static NSString *kApplicationID = @"171090106251253";
 		NSLog(@"Uploading %@ to Facebook", [picture	title]);
 		NSLog(@"nextImagePath %@", nextImagePath);
 		
-		NSData *imageData = [[NSData alloc] initWithContentsOfFile:nextImagePath];
+		NSData *imageData = [[[NSData alloc] initWithContentsOfFile:nextImagePath] autorelease];
 		if (!imageData || ([imageData length] == 0))
 		{
 			// Exit when there's an error like this
