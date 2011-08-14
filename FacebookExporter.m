@@ -384,17 +384,21 @@ static NSString *kApplicationID = @"171090106251253";
 - (void)webView:(WebView *)sender didCommitLoadForFrame:(WebFrame *)frame
 {
 	NSString *url = [sender mainFrameURL];
+	NSString *lockPicture = @"NSLockUnlockedTemplate";
+	NSString *fbRedirectURL = kRedirectURL;
 	
-	NSString *fbRedirectURL;
 	NSComparisonResult resHTTPS = [url compare:@"https" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [@"https" length])];
 	if (resHTTPS == NSOrderedSame)
+	{
 		fbRedirectURL = kSecRedirectURL;
-	else
-		fbRedirectURL = kRedirectURL;
+		lockPicture = @"NSLockLockedTemplate";
+	}
 
 	NSComparisonResult res = [url compare:fbRedirectURL options:NSCaseInsensitiveSearch range:NSMakeRange(0, [fbRedirectURL length])];
     if (res == NSOrderedSame)
     {
+		[httpsBrowsingPic setImage: [NSImage imageNamed:lockPicture]];
+		
         NSString *accessToken = [self extractParameter:kFBAccessToken fromURL:url];
         NSString *tokenExpires = [self extractParameter:kFBExpiresIn fromURL:url];
         //NSString *errorReason = [self extractParameter:kFBErrorReason fromURL:url];
