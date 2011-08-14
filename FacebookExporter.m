@@ -56,6 +56,7 @@ static NSString *kUserDefaultAuthenticated = @"ApertureFacebookPluginDefaultAuth
 
 static NSString *kOAuthURL = @"https://graph.facebook.com/oauth/authorize";
 static NSString *kRedirectURL = @"http://www.facebook.com/connect/login_success.html";
+static NSString *kSecRedirectURL = @"https://www.facebook.com/connect/login_success.html";
 
 static NSString *kSDKVersion = @"ios";
 static NSString *kFBAccessToken = @"access_token=";
@@ -384,7 +385,14 @@ static NSString *kApplicationID = @"171090106251253";
 {
 	NSString *url = [sender mainFrameURL];
 	
-	NSComparisonResult res = [url compare:kRedirectURL options:NSCaseInsensitiveSearch range:NSMakeRange(0, [kRedirectURL length])];
+	NSString *fbRedirectURL;
+	NSComparisonResult resHTTPS = [url compare:@"https" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [@"https" length])];
+	if (resHTTPS == NSOrderedSame)
+		fbRedirectURL = kSecRedirectURL;
+	else
+		fbRedirectURL = kRedirectURL;
+
+	NSComparisonResult res = [url compare:fbRedirectURL options:NSCaseInsensitiveSearch range:NSMakeRange(0, [fbRedirectURL length])];
     if (res == NSOrderedSame)
     {
         NSString *accessToken = [self extractParameter:kFBAccessToken fromURL:url];
@@ -812,12 +820,15 @@ static NSString *kApplicationID = @"171090106251253";
 	[PlugInDefaults removeUserAuthenticated];
 	
 	NSHTTPCookieStorage *cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-	NSArray *facebookCookies = [cookies cookiesForURL:[NSURL URLWithString:@"http://login.facebook.com"]];
+	NSMutableArray *facebookCookies = [NSMutableArray arrayWithCapacity:0];
+
+	[facebookCookies addObjectsFromArray:[cookies cookiesForURL:[NSURL URLWithString:@"http://login.facebook.com"]]];
+	[facebookCookies addObjectsFromArray:[cookies cookiesForURL:[NSURL URLWithString:@"https://login.facebook.com"]]];
 	
 	for (NSHTTPCookie *cookie in facebookCookies) {
 		[cookies deleteCookie:cookie];
 	}
-	
+
 	[self _authenticate];
 }
 
