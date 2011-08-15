@@ -36,5 +36,6 @@ means you need to open Aperture manually.</del>
 
 ## Authors
 * <a href="http://www.chrisstreeter.com">Chris Streeter</a>
+* <a href="https://github.com/alinx">Alex Brand</a> (contributor)
 * Some code is taken from <a href="https://github.com/facebook/facebook-ios-sdk">Facebook's iOS Library</a> (why don't they have a desktop SDK!)
 * Inspiration from the <a href="http://code.google.com/p/aperture-picasa-plugin/">Aperture to Picasa Plugin</a>

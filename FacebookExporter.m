@@ -384,17 +384,21 @@ static NSString *kApplicationID = @"171090106251253";
 - (void)webView:(WebView *)sender didCommitLoadForFrame:(WebFrame *)frame
 {
 	NSString *url = [sender mainFrameURL];
+	NSString *lockPicture = @"NSLockUnlockedTemplate";
+	NSString *fbRedirectURL = kRedirectURL;
 	
-	NSString *fbRedirectURL;
 	NSComparisonResult resHTTPS = [url compare:@"https" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [@"https" length])];
 	if (resHTTPS == NSOrderedSame)
+	{
 		fbRedirectURL = kSecRedirectURL;
-	else
-		fbRedirectURL = kRedirectURL;
+		lockPicture = @"NSLockLockedTemplate";
+	}
 
 	NSComparisonResult res = [url compare:fbRedirectURL options:NSCaseInsensitiveSearch range:NSMakeRange(0, [fbRedirectURL length])];
     if (res == NSOrderedSame)
     {
+		[httpsBrowsingPic setImage: [NSImage imageNamed:lockPicture]];
+		
         NSString *accessToken = [self extractParameter:kFBAccessToken fromURL:url];
         NSString *tokenExpires = [self extractParameter:kFBExpiresIn fromURL:url];
         //NSString *errorReason = [self extractParameter:kFBErrorReason fromURL:url];
@@ -1120,8 +1124,6 @@ static NSString *kApplicationID = @"171090106251253";
 		
 		[self _incrementUploadProgress:[[picture data] length]];
 		
-		[picture release];
-		
 		// Upload the next file
 		[self _uploadNextImage];
 	}
@@ -1150,7 +1152,7 @@ static NSString *kApplicationID = @"171090106251253";
 		// There are no more images to upload. We're done.
 		NSMenuItem *menuItem = [albumListView selectedItem];
 		FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
-		NSString *growlMsg = [NSString stringWithFormat:@"%d images transferred to to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
+		NSString *growlMsg = [NSString stringWithFormat:@"%d images transferred to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
 		
 		[GrowlApplicationBridge notifyWithTitle:@"Uploading finished..."
 									description:[self _localizedStringForKey:@"growlUploadingFinished" defaultValue:growlMsg]
@@ -1173,7 +1175,7 @@ static NSString *kApplicationID = @"171090106251253";
 		NSLog(@"Uploading %@ to Facebook", [picture	title]);
 		NSLog(@"nextImagePath %@", nextImagePath);
 		
-		NSData *imageData = [[NSData alloc] initWithContentsOfFile:nextImagePath];
+		NSData *imageData = [[[NSData alloc] initWithContentsOfFile:nextImagePath] autorelease];
 		if (!imageData || ([imageData length] == 0))
 		{
 			// Exit when there's an error like this

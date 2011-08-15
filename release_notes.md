@@ -1,6 +1,18 @@
 What's new in Facebook Exporter?
 ================================
 
+# Version 1.3
+
+* Check after the start, whether a new version is available. 
+    * You'll see an alert and you can update the plugin directly. 
+    * After that Aperture will restart.
+* Use own plist with bundleID of the plugin
+* The open album when upload is complete checkbox works now
+* Added Growl notifications
+* Add https browsing
+* Fixed memory leaks found by Analyzer
+
+
 # Version 1.2.1
 
 * Fix Sparkle version checking.

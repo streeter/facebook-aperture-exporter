@@ -45,6 +45,7 @@
 	
 	// Outlets to the FB settings view
 	IBOutlet NSTextField *loggedInAsTextField;
+	IBOutlet NSImageView *httpsBrowsingPic;
 	IBOutlet NSButton *logOutButton;
 	IBOutlet NSButton *preferencesButton;
 	
