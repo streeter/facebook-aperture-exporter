@@ -561,6 +561,8 @@
 		1DEB913B08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1 = x86_64;
 				COPY_PHASE_STRIP = NO;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = /;
@@ -578,6 +580,7 @@
 				INSTALL_PATH = "$(HOME)/Library/Application Support/Aperture/Plug-Ins/Export/";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = FacebookExporter;
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = ApertureExport;
 				ZERO_LINK = YES;
 			};
@@ -586,8 +589,8 @@
 		1DEB913C08733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1 = x86_64;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = /;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -603,6 +606,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = FacebookExporter;
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = ApertureExport;
 			};
 			name = Release;
