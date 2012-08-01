@@ -540,7 +540,7 @@ static NSString *kApplicationID = @"171090106251253";
 	
 	NSMenuItem *menuItem = [albumListView selectedItem];
 	FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
-	NSString *growlMsg = [NSString stringWithFormat:@"Begin exporting %d images to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
+	NSString *growlMsg = [NSString stringWithFormat:@"Begin exporting %ld images to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
 	
 	[GrowlApplicationBridge notifyWithTitle:@"Exporting images..."
 								description:[self _localizedStringForKey:@"growlExportingImages" defaultValue:growlMsg]
@@ -570,12 +570,12 @@ static NSString *kApplicationID = @"171090106251253";
 	NSLog(@"exportManagerShouldWriteImageData path: %@", path);
 	
 	// Add to the total bytes we have to upload so we can properly indicate progress.
-	NSLog(@"Total number of bytes is %d [%x] plus %d [%x]", totalBytes, totalBytes, [imageData length], [imageData length]);
+	NSLog(@"Total number of bytes is %lld [%llx] plus %ld [%lx]", totalBytes, totalBytes, [imageData length], [imageData length]);
 	totalBytes += [imageData length];
 	
 	// Set up our progress to count exported images
 	
-	NSString *exportString = [NSString stringWithFormat:@"Step 1 of 2: Exporting image %d of %d.", index, [[self imageList] count]];
+	NSString *exportString = [NSString stringWithFormat:@"Step 1 of 2: Exporting image %d of %ld.", index, [[self imageList] count]];
 	
 	[self lockProgress];
 	exportProgress.currentValue = index;
@@ -603,7 +603,7 @@ static NSString *kApplicationID = @"171090106251253";
 	[_exportedImagePaths addObject:picture];
 	
 	// Set up our progress to count exported images
-	NSString *exportString = [NSString stringWithFormat:@"Step 1 of 2: Exported image %d of %d.", index, [[self imageList] count]];
+	NSString *exportString = [NSString stringWithFormat:@"Step 1 of 2: Exported image %d of %ld.", index, [[self imageList] count]];
 	
 	// Increment the current progress
 	[self lockProgress];
@@ -628,7 +628,7 @@ static NSString *kApplicationID = @"171090106251253";
 	
 	NSMenuItem *menuItem = [albumListView selectedItem];
 	FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
-	NSString *growlMsg = [NSString stringWithFormat:@"Begin uploading %d images to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
+	NSString *growlMsg = [NSString stringWithFormat:@"Begin uploading %ld images to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
 	
 	[GrowlApplicationBridge notifyWithTitle:@"Uploading images..."
 								description:[self _localizedStringForKey:@"growlUploadingImages" defaultValue:growlMsg]
@@ -1143,7 +1143,7 @@ static NSString *kApplicationID = @"171090106251253";
 
 - (void)_uploadNextImage
 {
-	NSLog(@"_uploadNextImage with %d images left", [_exportedImagePaths count]);
+	NSLog(@"_uploadNextImage with %ld images left", [_exportedImagePaths count]);
 	
 	NSMenuItem *menuItem = [albumListView selectedItem];
 	FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
@@ -1152,7 +1152,7 @@ static NSString *kApplicationID = @"171090106251253";
 		// There are no more images to upload. We're done.
 		NSMenuItem *menuItem = [albumListView selectedItem];
 		FacebookAlbum *albumInfo = (FacebookAlbum *)[menuItem representedObject];
-		NSString *growlMsg = [NSString stringWithFormat:@"%d images transferred to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
+		NSString *growlMsg = [NSString stringWithFormat:@"%ld images transferred to Facebook album: %@", [[self imageList] count], [albumInfo albumName]];
 		
 		[GrowlApplicationBridge notifyWithTitle:@"Uploading finished..."
 									description:[self _localizedStringForKey:@"growlUploadingFinished" defaultValue:growlMsg]
@@ -1199,7 +1199,7 @@ static NSString *kApplicationID = @"171090106251253";
 
 - (void)_incrementUploadProgress:(SInt32)bytesWritten
 {
-	NSString *exportString = [NSString stringWithFormat:@"Step 2 of 2: Uploading image %d of %d.",
+	NSString *exportString = [NSString stringWithFormat:@"Step 2 of 2: Uploading image %ld of %ld.",
 							  ([[self imageList] count] - [_exportedImagePaths count]),
 							  [[self imageList] count]];
 	
@@ -1243,7 +1243,7 @@ static NSString *kApplicationID = @"171090106251253";
 								   withObject: dict
 								waitUntilDone: NO];
 		} else {
-			NSLog(@"Unable to get thumbnail for image indexed at %d.", i);
+			NSLog(@"Unable to get thumbnail for image indexed at %ld.", i);
 		}
 	}
 	
