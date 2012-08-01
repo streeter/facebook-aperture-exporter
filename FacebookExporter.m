@@ -109,22 +109,27 @@ static NSString *kApplicationID = @"171090106251253";
 		BOOL isDirectory;
 		if (![fileManager fileExistsAtPath:_tempDirectoryPath isDirectory:&isDirectory])
 		{
-			[fileManager createDirectoryAtPath:_tempDirectoryPath attributes:nil];
+            [fileManager createDirectoryAtURL:[NSURL URLWithString:_tempDirectoryPath]
+                  withIntermediateDirectories:YES attributes:nil error:nil];
 		}
 		else if (isDirectory) // If a folder already exists, empty it.
 		{
-			NSArray *contents = [fileManager directoryContentsAtPath:_tempDirectoryPath];
+			NSArray *contents = [fileManager contentsOfDirectoryAtPath:_tempDirectoryPath
+                                                                 error:nil];
 			NSInteger i;
 			for (i = 0; i < [contents count]; i++)
 			{
 				NSString *tempFilePath = [NSString stringWithFormat:@"%@%@", _tempDirectoryPath, [contents objectAtIndex:i]];
-				[fileManager removeFileAtPath:tempFilePath handler:nil];
+                [fileManager removeItemAtURL:[NSURL URLWithString:tempFilePath]
+                                       error:nil];
 			}
 		}
 		else // Delete the old file and create a new directory
 		{
-			[fileManager removeFileAtPath:_tempDirectoryPath handler:nil];
-			[fileManager createDirectoryAtPath:_tempDirectoryPath attributes:nil];
+            [fileManager removeItemAtURL:[NSURL URLWithString:_tempDirectoryPath]
+                                   error:nil];
+            [fileManager createDirectoryAtURL:[NSURL URLWithString:_tempDirectoryPath]
+                  withIntermediateDirectories:YES attributes:nil error:nil];
 		}
 		
 		_albumList = [[NSMutableArray alloc] init];
@@ -163,7 +168,8 @@ static NSString *kApplicationID = @"171090106251253";
 	[_topLevelNibObjects release];
 	
 	// Clean up the temporary files
-	[[NSFileManager defaultManager] removeFileAtPath:_tempDirectoryPath handler:nil];
+	[[NSFileManager defaultManager] removeItemAtURL:[NSURL URLWithString:_tempDirectoryPath]
+                                              error:nil];
 	[_tempDirectoryPath release];
 	
 	// TODO - dealloc all the FacebookAlbums inside _albumList
@@ -1119,7 +1125,8 @@ static NSString *kApplicationID = @"171090106251253";
 		NSFileManager *fileManager = [NSFileManager defaultManager];
 		FacebookPicture *picture = [_exportedImagePaths objectAtIndex:0];
 		NSString *imagePath = [picture path];
-		[fileManager removeFileAtPath:imagePath handler:nil];
+		[fileManager removeItemAtURL:[NSURL URLWithString:imagePath]
+                               error:nil];
 		[_exportedImagePaths removeObjectAtIndex:0];
 		
 		[self _incrementUploadProgress:[[picture data] length]];
