@@ -917,7 +917,7 @@ static NSString *kApplicationID = @"171090106251253";
 {
 	NSLog(@"finisheCreateNewAlbumRequest called");
 	
-	FacebookAlbum *albumInfo = [[FacebookAlbum alloc] init];
+	FacebookAlbum *albumInfo = [[[FacebookAlbum alloc] init] autorelease];
 	
 	[albumInfo setAlbumName:[newAlbumName stringValue]];
 	[albumInfo setAlbumID:albumId];
