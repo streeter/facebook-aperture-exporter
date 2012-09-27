@@ -18,5 +18,7 @@
 + (void)removeUserAuthenticated;
 + (BOOL)isOpenFacebookOnFinish;
 + (void)setOpenFacebookOnFinish:(BOOL)openOnFinish;
++ (BOOL)isUseIPTCHeader;
++ (void)setUseIPTCHeader:(BOOL)useIPTCHeader;
 
 @end

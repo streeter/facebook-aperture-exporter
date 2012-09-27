@@ -1,6 +1,12 @@
 What's new in Facebook Exporter?
 ================================
 
+# Version 1.4
+
+* Switch project to Xcode4 and OS X SDK 10.7
+* Option to use IPTC headline instead of caption as photo title
+
+
 # Version 1.3
 
 * Check after the start, whether a new version is available. 

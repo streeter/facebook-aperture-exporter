@@ -17,6 +17,8 @@
 	{
 		[self setTitle:@"FacebookPicture"];
 		[self setDescription:@""];
+        [self setCaption:@""];
+        [self setIptcHeadline:@""];
 		[self setDefaultThumbnail:nil];
 		[self setPath:nil];
 		
@@ -29,6 +31,8 @@
 {
 	[self setTitle:nil];
 	[self setDescription:nil];
+    [self setCaption:nil];
+    [self setIptcHeadline:nil];
 	[self setDefaultThumbnail:nil];
 	[self setPath:nil];
 	
@@ -54,7 +58,10 @@
 
 - (NSString *)description
 {
-	return _description;
+    if ([PlugInDefaults isUseIPTCHeader])
+        return [self iptcHeadline];
+    else
+        return [self title];
 }
 
 - (void)setDescription:(NSString *)aValue
@@ -63,6 +70,30 @@
 	NSString *oldDescription = _description;
 	_description = [aValue copy];
 	[oldDescription release];
+}
+
+- (NSString *)caption
+{
+	return _caption;
+}
+
+- (void)setCaption:(NSString *)aValue
+{
+	NSString *oldCaption = _caption;
+	_caption = [aValue copy];
+	[oldCaption release];
+}
+
+- (NSString *)iptcHeadline
+{
+    return _iptcHeadline;
+}
+
+- (void)setIptcHeadline:(NSString *)aValue
+{
+    NSString *oldIptcHeadline = _iptcHeadline;
+	_iptcHeadline = [aValue copy];
+	[oldIptcHeadline release];
 }
 
 - (BOOL)uploadDescription

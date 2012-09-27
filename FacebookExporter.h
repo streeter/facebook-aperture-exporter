@@ -51,6 +51,7 @@
 	
 	IBOutlet NSTableView *imageTableView;
 	IBOutlet NSTextField *captionTextField;
+    IBOutlet NSTextField *descriptionTextField;
 	
 	IBOutlet NSPopUpButton *albumListView;
 	
@@ -72,7 +73,12 @@
 	IBOutlet NSWindow *newAlbumWindow;
 	IBOutlet NSTextField *newAlbumName;
 	IBOutlet NSTextField *newAlbumDescription;
-	
+    
+    // Outlets of preferences window
+    IBOutlet NSWindow *preferencesWindow;
+    IBOutlet NSButton *prefCloseButton;
+    IBOutlet NSButton *useIPTCHeaderButton;
+    
 	// List of images being imported.
 	NSMutableArray *_imageList;
 	
@@ -132,6 +138,8 @@
 // Preferences Actions
 #pragma mark Preferences Actions
 - (IBAction)openPreferencesWindow:(id)sender;
+- (IBAction)closePreferencesWindow:(id)sender;
+- (IBAction)changeStateUseIPTCHeadline:(id)sender;
 - (IBAction)changeStateOpenOnFinish:(id)sender;
 
 #pragma mark -

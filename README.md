@@ -7,12 +7,13 @@ This is a simple exporter plugin for <a href="http://www.apple.com/aperture/">Ap
 * Logging in and out of a Facebook account
 * Album creation and selection (where to upload the photos to)
 * High resolution photo uploads to Facebook
-  * Enabled by uploading large versions to Facebook (choose an export preset that will create 2048 pixels along the largest side)
+* Enabled by uploading large versions to Facebook (choose an export preset that will create 2048 pixels along the largest side)
+* Option to use IPTC headline instead of caption as photo title (<a href="https://github.com/streeter/facebook-aperture-exporter/issues/9">Issue #9</a>)
 * Sparkle updating
 * Growl notifications
 
 ## Known Limitations and Issues
-* The preferences button does nothing. Eventually it will show the preferences window.
+* <del>The preferences button does nothing. Eventually it will show the preferences window.</del>
 * The export progress information in the Activity panel is pretty much broken. At least you know it is still exporting.
 * The caption for a created Facebook album is not set. Still figuring out why that is the case.
 * <del>The open album when upload is complete checkbox does not work</del>

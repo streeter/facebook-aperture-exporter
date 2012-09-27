@@ -7,11 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PlugInDefaults.h"
 
 
 @interface FacebookPicture : NSObject {
 	NSString *_title;
 	NSString *_description;
+    NSString *_caption;
+    NSString *_iptcHeadline;
 	NSArray *_keywords;  // Array of NSStrings
 	NSImage *_defaultThumbnail;
 	BOOL _uploadExifInformation;
@@ -28,6 +31,12 @@
 
 - (NSString *)description;
 - (void)setDescription:(NSString *)aValue;
+
+- (NSString *)iptcHeadline;
+- (void)setIptcHeadline:(NSString *)aValue;
+
+- (NSString *)caption;
+- (void)setCaption:(NSString *)aValue;
 
 - (BOOL)uploadDescription;
 - (void)setUploadDescription:(BOOL)aValue;

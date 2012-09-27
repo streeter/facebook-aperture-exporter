@@ -848,8 +848,39 @@ static NSString *kApplicationID = @"171090106251253";
 #pragma mark Preference	Actions
 - (IBAction)openPreferencesWindow:(id)sender
 {
-	// TODO
 	NSLog(@"Should open preferences sheet");
+    
+    [useIPTCHeaderButton setState:[PlugInDefaults isUseIPTCHeader]];
+    
+    if (![preferencesWindow isVisible]) {
+        [NSApp beginSheet:preferencesWindow
+           modalForWindow:[_exportManager window]
+            modalDelegate:self
+           didEndSelector:nil
+              contextInfo:nil];
+    }
+}
+
+- (IBAction)closePreferencesWindow:(id)sender
+{
+    if ([preferencesWindow isVisible]) {
+		[NSApp endSheet:preferencesWindow];
+		[preferencesWindow orderOut:self];
+	}
+}
+
+- (IBAction)changeStateUseIPTCHeadline:(id)sender
+{
+    [PlugInDefaults setUseIPTCHeader:[useIPTCHeaderButton state]];
+    
+    // Update data in View
+    NSInteger selRow = [imageTableView selectedRow];  
+    NSIndexSet *idx = [[NSIndexSet alloc] initWithIndex:selRow];
+    
+    [imageTableView deselectRow:selRow];
+    [imageTableView selectRowIndexes:idx byExtendingSelection:NO];
+
+    [idx release];
 }
 
 - (IBAction)changeStateOpenOnFinish:(id)sender
@@ -1289,11 +1320,18 @@ static NSString *kApplicationID = @"171090106251253";
 			
 			// set the path of the on-disk picture and our cache instance
 			NSString *caption = [image_properties objectForKey:@"Caption/Abstract"];
+            NSString *headline = [image_properties objectForKey:@"Headline"];
 			
 			if (caption && [caption length] > 0) {
-				[picture setDescription:caption];
+				[picture setCaption:caption];
 			} else {
-				[picture setDescription:[image_dict objectForKey:kExportKeyVersionName]];
+				[picture setCaption:[image_dict objectForKey:kExportKeyVersionName]];
+			}
+            
+            if (headline && [headline length] > 0) {
+				[picture setIptcHeadline:headline];
+			} else {
+				[picture setIptcHeadline:[image_dict objectForKey:kExportKeyVersionName]];
 			}
 			
 			[picture setTitle:[image_dict objectForKey:kExportKeyVersionName]];

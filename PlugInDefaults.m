@@ -10,6 +10,7 @@
 
 #define kUserAuthenticated @"ApertureFacebookPluginDefaultAuthenticated"
 #define	kOpenFacebookOnFinish @"OpenFacebookOnFinish"
+#define kUseIPTCHeader @"UseIPTCHeader"
 
 @implementation PlugInDefaults
 
@@ -50,6 +51,22 @@
 	NSString *pluginBundleID = [[[NSBundle bundleForClass: [self class]] infoDictionary] objectForKey:@"CFBundleIdentifier"];
 	BundleUserDefaults *customDefaults = [[BundleUserDefaults alloc] initWithPersistentDomainName:pluginBundleID];
 	[customDefaults setBool:openOnFinish forKey:kOpenFacebookOnFinish];
+	[customDefaults synchronize];
+	[customDefaults release];
+}
+
++ (BOOL)isUseIPTCHeader
+{
+    NSString *pluginBundleID = [[[NSBundle bundleForClass: [self class]] infoDictionary] objectForKey:@"CFBundleIdentifier"];
+	BundleUserDefaults *customDefaults = [[[BundleUserDefaults alloc] initWithPersistentDomainName:pluginBundleID] autorelease];
+	return [customDefaults boolForKey:kUseIPTCHeader];
+}
+
++ (void)setUseIPTCHeader:(BOOL)useIPTCHeader
+{
+    NSString *pluginBundleID = [[[NSBundle bundleForClass: [self class]] infoDictionary] objectForKey:@"CFBundleIdentifier"];
+	BundleUserDefaults *customDefaults = [[BundleUserDefaults alloc] initWithPersistentDomainName:pluginBundleID];
+	[customDefaults setBool:useIPTCHeader forKey:kUseIPTCHeader];
 	[customDefaults synchronize];
 	[customDefaults release];
 }
