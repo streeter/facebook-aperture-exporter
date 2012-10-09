@@ -9,6 +9,7 @@
 #import "FacebookRequestController.h"
 #import "FacebookExporter.h"
 #import "FacebookAlbum.h"
+#import "JSON.h"
 
 @interface FacebookRequestController(PrivateMethods)
 
@@ -80,17 +81,21 @@ static NSString *kRestApiURL = @"https://api.facebook.com/method/";
 #pragma mark -
 // Get Create Album
 #pragma mark Create Album
-- (void)createAlbum:(NSString *)userid albumName:(NSString *)aName albumDescription:(NSString *)aDescription
+- (void)createAlbum:(NSString *)userid albumName:(NSString *)aName albumDescription:(NSString *)aDescription albumPrivacy: (NSString *)aPrivacy
 {
 	_startImmediately = NO;
 	
 	NSString *path = [NSString stringWithFormat:@"%@/albums", userid];
+
+    NSString *albumPrivacy = [[NSMutableDictionary dictionaryWithObject:aPrivacy forKey:@"value"] JSONRepresentation];
 	
 	// Get the values and create the album on facebook
 	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
 								   aName, @"name",
 								   aDescription, @"description",
+                                   albumPrivacy, @"privacy",
 								   nil];
+    
 	NSLog(@"Create album with params %@", params);
 	[self requestWithGraphPath:path
 					 andParams:params

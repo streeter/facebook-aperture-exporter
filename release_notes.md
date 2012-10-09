@@ -5,6 +5,7 @@ What's new in Facebook Exporter?
 
 * Switch project to Xcode4 and OS X SDK 10.7
 * Option to use IPTC headline instead of caption as photo title
+* Add album privacy for new albums
 
 
 # Version 1.3

@@ -940,8 +940,13 @@ static NSString *kApplicationID = @"171090106251253";
 	}
 	
 	[self _displayConnectionSheet:@"Creating new album..."];
+    
+    NSArray *albumPrivacyArray = [NSArray arrayWithObjects:@"SELF", @"EVERYONE",
+                         @"ALL_FRIENDS", nil];
+    
+    NSString *privacy = [albumPrivacyArray objectAtIndex:[newAlbumPrivacy indexOfSelectedItem]];
 	
-	[[self requestController] createAlbum:@"me" albumName:[newAlbumName stringValue] albumDescription:[newAlbumDescription stringValue]];
+	[[self requestController] createAlbum:@"me" albumName:[newAlbumName stringValue] albumDescription:[newAlbumDescription stringValue] albumPrivacy:privacy];
 }
 
 - (void)finishCreateNewAlbumRequest:(NSString *)albumId error:(NSString *)message

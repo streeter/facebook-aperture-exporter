@@ -46,7 +46,7 @@
 #pragma mark -
 // Get Create Album
 #pragma mark Create Album
-- (void)createAlbum:(NSString *)userid albumName:(NSString *)aName albumDescription:(NSString *)aDescription;
+- (void)createAlbum:(NSString *)userid albumName:(NSString *)aName albumDescription:(NSString *)aDescription albumPrivacy: (NSString *)aPrivacy;
 
 #pragma mark -
 // Get Upload Photo

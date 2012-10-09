@@ -73,6 +73,7 @@
 	IBOutlet NSWindow *newAlbumWindow;
 	IBOutlet NSTextField *newAlbumName;
 	IBOutlet NSTextField *newAlbumDescription;
+    IBOutlet NSPopUpButton *newAlbumPrivacy;
     
     // Outlets of preferences window
     IBOutlet NSWindow *preferencesWindow;
