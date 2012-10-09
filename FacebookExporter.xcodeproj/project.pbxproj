@@ -33,7 +33,6 @@
 		D930C82612F2A12C0042BBF4 /* sign_update.rb in Resources */ = {isa = PBXBuildFile; fileRef = D930C82112F2A12C0042BBF4 /* sign_update.rb */; };
 		D957ED021292FC6900418F32 /* FacebookRequestController.m in Sources */ = {isa = PBXBuildFile; fileRef = D957ED011292FC6900418F32 /* FacebookRequestController.m */; };
 		D99F11251287643200A48041 /* FacebookPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = D99F11241287643200A48041 /* FacebookPicture.m */; };
-		D99F121D1287EC4300A48041 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99F121C1287EC4300A48041 /* WebKit.framework */; };
 		D99F136E1287FE5400A48041 /* FacebookRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D99F136D1287FE5400A48041 /* FacebookRequest.m */; };
 		D99F13931287FF5500A48041 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D99F13881287FF5500A48041 /* NSObject+SBJSON.m */; };
 		D99F13941287FF5500A48041 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D99F138A1287FF5500A48041 /* NSString+SBJSON.m */; };
@@ -63,6 +62,8 @@
 		FA5D262A12FF052D00ADCB6D /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D261A12FF052D00ADCB6D /* CXMLNode_XPathExtensions.m */; };
 		FA5D262B12FF052D00ADCB6D /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D261D12FF052D00ADCB6D /* CTidy.m */; };
 		FA5D264A12FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D264912FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m */; };
+		FA906ECB1624C7E200FF4C16 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA906ECA1624C7E200FF4C16 /* WebKit.framework */; };
+		FA906ED11624C82200FF4C16 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA906ED01624C82200FF4C16 /* WebKit.framework */; };
 		FAA0F6E113AD253D009CF224 /* BundleUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F6E013AD253D009CF224 /* BundleUserDefaults.m */; };
 		FAA0F6E413AD259F009CF224 /* PlugInDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F6E313AD259F009CF224 /* PlugInDefaults.m */; };
 /* End PBXBuildFile section */
@@ -117,7 +118,6 @@
 		D957ED011292FC6900418F32 /* FacebookRequestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookRequestController.m; sourceTree = "<group>"; };
 		D99F11231287643200A48041 /* FacebookPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookPicture.h; sourceTree = "<group>"; };
 		D99F11241287643200A48041 /* FacebookPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookPicture.m; sourceTree = "<group>"; };
-		D99F121C1287EC4300A48041 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D99F136C1287FE5400A48041 /* FacebookRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookRequest.h; sourceTree = "<group>"; };
 		D99F136D1287FE5400A48041 /* FacebookRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookRequest.m; sourceTree = "<group>"; };
 		D99F13861287FF5500A48041 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
@@ -170,6 +170,8 @@
 		FA5D264812FF064F00ADCB6D /* PlugInSUStandardVersionComparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlugInSUStandardVersionComparator.h; sourceTree = "<group>"; };
 		FA5D264912FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlugInSUStandardVersionComparator.m; sourceTree = "<group>"; };
 		FA60B7EA13C304EA00D9B215 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		FA906ECA1624C7E200FF4C16 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
+		FA906ED01624C82200FF4C16 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		FAA0F6DF13AD253D009CF224 /* BundleUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BundleUserDefaults.h; sourceTree = "<group>"; };
 		FAA0F6E013AD253D009CF224 /* BundleUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BundleUserDefaults.m; sourceTree = "<group>"; };
 		FAA0F6E213AD259F009CF224 /* PlugInDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlugInDefaults.h; sourceTree = "<group>"; };
@@ -181,11 +183,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA906ECB1624C7E200FF4C16 /* WebKit.framework in Frameworks */,
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 				D15DEA4A0ABF639500CBE3A5 /* PluginManager.framework in Frameworks */,
-				D99F121D1287EC4300A48041 /* WebKit.framework in Frameworks */,
 				FA39DCC712E426440058685C /* Sparkle.framework in Frameworks */,
 				FA31318013E4B39E00470875 /* Growl.framework in Frameworks */,
+				FA906ED11624C82200FF4C16 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +198,7 @@
 		089C166AFE841209C02AAC07 /* MyApertureExportPlugIn */ = {
 			isa = PBXGroup;
 			children = (
+				FA906ECA1624C7E200FF4C16 /* WebKit.framework */,
 				287924B60DAEB2A20074992A /* ApertureHeaders */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				32C88E010371C26100C91783 /* Other Sources */,
@@ -269,7 +273,7 @@
 		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D99F121C1287EC4300A48041 /* WebKit.framework */,
+				FA906ED01624C82200FF4C16 /* WebKit.framework */,
 				089C167FFE841241C02AAC07 /* AppKit.framework */,
 				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
 				089C1672FE841209C02AAC07 /* Foundation.framework */,
