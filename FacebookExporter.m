@@ -930,8 +930,22 @@ static NSString *kApplicationID = @"171090106251253";
 {
 	NSLog(@"Finish create new album window");
 	
-	if (![newAlbumName stringValue]) {
+    if ([[newAlbumName stringValue] length] <= 0) {
 		NSLog(@"blank new album name");
+        
+        NSString *errorMessage = [self _localizedStringForKey:@"NewAlbumErrorMessage" defaultValue:@"Can't create new album"];
+        
+        NSString *informativeText = [self _localizedStringForKey:@"NewAlbumInformativeText" defaultValue:@"Blank new album name."];
+        
+        NSAlert *alert = [NSAlert alertWithMessageText:errorMessage
+										 defaultButton:[self _localizedStringForKey:@"OK"
+																	   defaultValue:@"OK"]
+									   alternateButton:nil
+										   otherButton:nil
+							 informativeTextWithFormat:informativeText];
+		[alert setAlertStyle:NSCriticalAlertStyle];
+		[alert runModal];
+        return;
 	}
 	
 	if ([newAlbumWindow isVisible]) {
