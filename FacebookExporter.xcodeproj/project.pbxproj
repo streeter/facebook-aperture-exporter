@@ -41,8 +41,6 @@
 		D99F13971287FF5500A48041 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D99F13901287FF5500A48041 /* SBJsonParser.m */; };
 		D99F13981287FF5500A48041 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D99F13921287FF5500A48041 /* SBJsonWriter.m */; };
 		D9FF61FA128B8F3D0012A792 /* FacebookAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FF61F9128B8F3D0012A792 /* FacebookAlbum.m */; };
-		FA31318013E4B39E00470875 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA31317F13E4B39E00470875 /* Growl.framework */; };
-		FA31318D13E4B3AC00470875 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA31317F13E4B39E00470875 /* Growl.framework */; };
 		FA3131C513E4C1D100470875 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = FA60B7EA13C304EA00D9B215 /* Growl Registration Ticket.growlRegDict */; };
 		FA39DCC712E426440058685C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA39DCC612E426440058685C /* Sparkle.framework */; };
 		FA39DD7612E426650058685C /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA39DCC612E426440058685C /* Sparkle.framework */; };
@@ -62,10 +60,11 @@
 		FA5D262A12FF052D00ADCB6D /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D261A12FF052D00ADCB6D /* CXMLNode_XPathExtensions.m */; };
 		FA5D262B12FF052D00ADCB6D /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D261D12FF052D00ADCB6D /* CTidy.m */; };
 		FA5D264A12FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D264912FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m */; };
-		FA906ECB1624C7E200FF4C16 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA906ECA1624C7E200FF4C16 /* WebKit.framework */; };
 		FA906ED11624C82200FF4C16 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA906ED01624C82200FF4C16 /* WebKit.framework */; };
 		FAA0F6E113AD253D009CF224 /* BundleUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F6E013AD253D009CF224 /* BundleUserDefaults.m */; };
 		FAA0F6E413AD259F009CF224 /* PlugInDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0F6E313AD259F009CF224 /* PlugInDefaults.m */; };
+		FAC7F2A01625FD4E00B26311 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC7F29E1625FD3200B26311 /* Growl.framework */; };
+		FAC7F2A11625FD5500B26311 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAC7F29E1625FD3200B26311 /* Growl.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,8 +84,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FA31318D13E4B3AC00470875 /* Growl.framework in CopyFiles */,
 				FA39DD7612E426650058685C /* Sparkle.framework in CopyFiles */,
+				FAC7F2A11625FD5500B26311 /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +134,6 @@
 		D99F13921287FF5500A48041 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		D9FF61F8128B8F3D0012A792 /* FacebookAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookAlbum.h; sourceTree = "<group>"; };
 		D9FF61F9128B8F3D0012A792 /* FacebookAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookAlbum.m; sourceTree = "<group>"; };
-		FA31317F13E4B39E00470875 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		FA39DCC612E426440058685C /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		FA39DDDB12E439BB0058685C /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		FA4CBAE413ACDEAE009E0372 /* PlugInUpdateCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlugInUpdateCheck.h; sourceTree = "<group>"; };
@@ -170,12 +168,12 @@
 		FA5D264812FF064F00ADCB6D /* PlugInSUStandardVersionComparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlugInSUStandardVersionComparator.h; sourceTree = "<group>"; };
 		FA5D264912FF064F00ADCB6D /* PlugInSUStandardVersionComparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlugInSUStandardVersionComparator.m; sourceTree = "<group>"; };
 		FA60B7EA13C304EA00D9B215 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
-		FA906ECA1624C7E200FF4C16 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		FA906ED01624C82200FF4C16 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		FAA0F6DF13AD253D009CF224 /* BundleUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BundleUserDefaults.h; sourceTree = "<group>"; };
 		FAA0F6E013AD253D009CF224 /* BundleUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BundleUserDefaults.m; sourceTree = "<group>"; };
 		FAA0F6E213AD259F009CF224 /* PlugInDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlugInDefaults.h; sourceTree = "<group>"; };
 		FAA0F6E313AD259F009CF224 /* PlugInDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlugInDefaults.m; sourceTree = "<group>"; };
+		FAC7F29E1625FD3200B26311 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,11 +181,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA906ECB1624C7E200FF4C16 /* WebKit.framework in Frameworks */,
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				FAC7F2A01625FD4E00B26311 /* Growl.framework in Frameworks */,
 				D15DEA4A0ABF639500CBE3A5 /* PluginManager.framework in Frameworks */,
 				FA39DCC712E426440058685C /* Sparkle.framework in Frameworks */,
-				FA31318013E4B39E00470875 /* Growl.framework in Frameworks */,
 				FA906ED11624C82200FF4C16 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,7 +195,6 @@
 		089C166AFE841209C02AAC07 /* MyApertureExportPlugIn */ = {
 			isa = PBXGroup;
 			children = (
-				FA906ECA1624C7E200FF4C16 /* WebKit.framework */,
 				287924B60DAEB2A20074992A /* ApertureHeaders */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				32C88E010371C26100C91783 /* Other Sources */,
@@ -262,7 +258,7 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FA31317F13E4B39E00470875 /* Growl.framework */,
+				FAC7F29E1625FD3200B26311 /* Growl.framework */,
 				FA39DCC612E426440058685C /* Sparkle.framework */,
 				D15DEA490ABF639500CBE3A5 /* PluginManager.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
@@ -574,6 +570,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../Downloads/Growl-2.0-SDK/Framework\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -600,6 +597,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../Downloads/Growl-2.0-SDK/Framework\"",
 				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;

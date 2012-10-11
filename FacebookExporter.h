@@ -195,6 +195,8 @@
 // Growl Delegate Methods
 #pragma mark Growl Delegate Methods
 - (NSString *) applicationNameForGrowl;
+- (NSDictionary *) registrationDictionaryForGrowl;
+- (BOOL) hasNetworkClientEntitlement;
 
 #pragma mark -
 // Private Methods

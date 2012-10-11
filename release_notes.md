@@ -6,6 +6,7 @@ What's new in Facebook Exporter?
 * Switch project to Xcode4 and OS X SDK 10.7
 * Option to use IPTC headline instead of caption as photo title
 * Add album privacy for new albums
+* Update to Growl SDK 2.0 - now it works with sandboxed Aperture 3.4.x
 
 
 # Version 1.3

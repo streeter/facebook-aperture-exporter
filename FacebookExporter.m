@@ -213,14 +213,10 @@ static NSString *kApplicationID = @"171090106251253";
 	
 	NSString *pluginBundleID = [[[NSBundle bundleForClass: [self class]] infoDictionary] objectForKey:@"CFBundleIdentifier"];
 	NSLog(@"Plugin Bundle ID: %@", pluginBundleID);
-		  
-	NSString *pathToGrowlDic = [[NSBundle bundleWithIdentifier:pluginBundleID] pathForResource:@"Growl Registration Ticket" 
-																						ofType:@"growlRegDict" ];	
 	
-	[GrowlApplicationBridge setGrowlDelegate:self];															
-	[GrowlApplicationBridge registerWithDictionary:[NSDictionary dictionaryWithContentsOfFile:pathToGrowlDic]];
-	
-	_updateNow = NO;	
+	[GrowlApplicationBridge setGrowlDelegate:self];
+    
+	_updateNow = NO;
 	NSString *newVersion;
 	
 	if ([PlugInUpdateCheck isUpdateAvailable:&newVersion]) {
@@ -1151,6 +1147,20 @@ static NSString *kApplicationID = @"171090106251253";
 {
 	// applicationName should not change between versions and incarnations
 	return @"Aperture FacebookExporterPlugIn";
+}
+
+- (NSDictionary *) registrationDictionaryForGrowl
+{
+    NSString *pluginBundleID = [[[NSBundle bundleForClass: [self class]] infoDictionary] objectForKey:@"CFBundleIdentifier"];
+    
+    NSString *pathToGrowlDic = [[NSBundle bundleWithIdentifier:pluginBundleID] pathForResource:@"Growl Registration Ticket" ofType:@"growlRegDict" ];
+    
+	return [NSDictionary dictionaryWithContentsOfFile:pathToGrowlDic];
+}
+
+- (BOOL) hasNetworkClientEntitlement
+{
+    return YES;
 }
 
 #pragma mark -
