@@ -5,7 +5,7 @@ This is a simple exporter plugin for <a href="http://www.apple.com/aperture/">Ap
 
 ## Current Features
 * Logging in and out of a Facebook account
-* Album creation and selection (where to upload the photos to)
+* Album creation with privacy and selection (where to upload the photos to)
 * High resolution photo uploads to Facebook
 * Enabled by uploading large versions to Facebook (choose an export preset that will create 2048 pixels along the largest side)
 * Option to use IPTC headline instead of caption as photo title (<a href="https://github.com/streeter/facebook-aperture-exporter/issues/9">Issue #9</a>)
@@ -26,10 +26,11 @@ means you need to open Aperture manually.</del>
 * Add a tag to all uploaded photos
 
 ## Usage and Installation
-1. Download the <a href="https://github.com/streeter/facebook-aperture-exporter/downloads">plugin from github</a>.
-2. After downloading, put the plugin in the directory `~/Library/Application Support/Aperture/Plug-Ins/Export`. If the `Plug-Ins` and / or `Export` directories do not exist, create them.
-3. If Aperture is running, restart it.
-4. Select the versions to export, choose `File -> Export -> FacebookExporter...`
+1. You need OS X 10.7 (Lion) to use the latest plugin.
+2. Download the <a href="https://github.com/streeter/facebook-aperture-exporter/downloads">plugin from github</a>.
+3. After downloading, put the plugin in the directory `~/Library/Application Support/Aperture/Plug-Ins/Export`. If the `Plug-Ins` and / or `Export` directories do not exist, create them.
+4. If Aperture is running, restart it.
+5. Select the versions to export, choose `File -> Export -> FacebookExporter...`
 
 ## Screenshot
 
