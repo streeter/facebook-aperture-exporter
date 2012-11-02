@@ -4,19 +4,31 @@
       <title>FacebookExporter Changelog</title>
       <link>https://github.com/streeter/facebook-aperture-exporter/raw/master/Appcast/appcast.xml</link>
       <description>Most recent changes with links to updates.</description>
-      <language>en</language>
-        <item>
-            <title>Version 1.3</title>
-            <sparkle:releaseNotesLink>https://github.com/streeter/facebook-aperture-exporter/raw/master/release_notes.md</sparkle:releaseNotesLink>
-            <pubDate>Fri, 19 Aug 2011 13:40:00 -0700</pubDate>
-            <enclosure
-                url="https://github.com/downloads/streeter/facebook-aperture-exporter/FacebookExporter.1.3.ApertureExport.zip"
-                sparkle:version="1.3"
-                type="application/octet-stream"
-                length="845180"
-                sparkle:dsaSignature="MC0CFQClUy475och5JpfHfPAzrIrNnFJOwIUJmtX6ZzK/dAWssj20PBdPDKyj5s="
-            />
-        </item>
+       <language>en</language>
+       <item>
+           <title>Version 1.4</title>
+           <sparkle:releaseNotesLink>https://github.com/streeter/facebook-aperture-exporter/raw/master/release_notes.md</sparkle:releaseNotesLink>
+           <pubDate>Fri, 2 Nov 2012 08:15:00 -0700</pubDate>
+           <enclosure
+           url="https://github.com/downloads/streeter/facebook-aperture-exporter/FacebookExporter.1.4.ApertureExport.zip"
+           sparkle:version="1.4"
+           type="application/octet-stream"
+           length="1037229"
+           sparkle:dsaSignature="MC0CFQDEoKltqOO+a+bHAqokXOe7F/nNiQIUMLjcypaiwhagFwXOyx7sCd78ycA="
+           />
+       </item>
+       <item>
+           <title>Version 1.3</title>
+           <sparkle:releaseNotesLink>https://github.com/streeter/facebook-aperture-exporter/raw/master/release_notes.md</sparkle:releaseNotesLink>
+           <pubDate>Fri, 19 Aug 2011 13:40:00 -0700</pubDate>
+           <enclosure
+           url="https://github.com/downloads/streeter/facebook-aperture-exporter/FacebookExporter.1.3.ApertureExport.zip"
+           sparkle:version="1.3"
+           type="application/octet-stream"
+           length="845180"
+           sparkle:dsaSignature="MC0CFQClUy475och5JpfHfPAzrIrNnFJOwIUJmtX6ZzK/dAWssj20PBdPDKyj5s="
+           />
+       </item>
 	  <item>
 			<title>Version 1.2.1</title>
 			<sparkle:releaseNotesLink>https://github.com/streeter/facebook-aperture-exporter/raw/master/release_notes.md</sparkle:releaseNotesLink>
