@@ -7,6 +7,7 @@
        <language>en</language>
        <item>
            <title>Version 1.4</title>
+		   <sparkle:minimumSystemVersion>10.7.0</sparkle:minimumSystemVersion>
            <sparkle:releaseNotesLink>https://github.com/streeter/facebook-aperture-exporter/raw/master/release_notes.md</sparkle:releaseNotesLink>
            <pubDate>Fri, 2 Nov 2012 08:15:00 -0700</pubDate>
            <enclosure
