@@ -33,6 +33,10 @@ This repository hosts the source code, documentation and is the place to report 
 
 ![Screenshot][screenshot]
 
+## License
+
+Uses the [MIT][mit] license.
+
 ## Authors
 * [Chris Streeter][chris-streeter]
 * [Alex Brand][alex-brand] (contributor)
@@ -49,3 +53,4 @@ This repository hosts the source code, documentation and is the place to report 
 [alex-brand]: https://github.com/alinx
 [facebook-sdk]: https://github.com/facebook/facebook-ios-sdk
 [aperture-picasa]: http://code.google.com/p/aperture-picasa-plugin/
+[mit]: http://opensource.org/licenses/MIT
